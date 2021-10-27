@@ -9,7 +9,7 @@ export const HeaderContainer = styled.header`
     background: transparent;
     justify-content: space-between;
 
-    .join_elements {
+    .components {
         display: flex;
         gap: 1rem;
         height: 100%;

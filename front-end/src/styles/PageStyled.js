@@ -16,8 +16,8 @@ export const PageComponent = styled.div`
 `;
 
 export const Main = styled.main`
-    grid-area: main;
     padding: 0 2em;
+    grid-area: main;
     background: transparent;
     height: calc(100vh - 5rem);
 `;

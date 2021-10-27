@@ -15,7 +15,7 @@ const Header = ({ pageTitle }) => {
                 {pageTitle}
             </PageTitle>
 
-            <div className="join_elements">
+            <div className="components">
                 <SearchBar />
                 <NotificationButton>
                     <FiBell />
