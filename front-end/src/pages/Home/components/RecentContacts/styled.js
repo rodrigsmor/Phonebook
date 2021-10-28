@@ -1,39 +1,57 @@
 import styled from 'styled-components';
 
 export const BoxContainer = styled.section`
-    display: grid;
     gap: 5px;
+    display: grid;
     grid-row: 2/3;
     grid-column: 1/4;
     overflow: hidden;
+
+    h3 {
+        display: flex;
+        text-align: left;
+        grid-column: 1/6;
+        height: 1.17em;
+        align-items: center;
+        width: 100%;
+    }
 `;
 
 export const ContactsWrapper = styled.div`
-    gap: 20px;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    display: grid;
+    grid-gap: 26px;
+    overflow: hidden;
+    grid-column: 1/6;
+    height: 3.8rem;
+    padding: 0 5px;
+    grid-template-columns: repeat(8, 3.2rem);
 `;
 
 export const ContactsMin = styled.figure`
-    width: 3rem;
-    height: 3rem;
+    margin: auto 0;
+    width: 3.2rem;
     display: flex;
+    height: 3.2rem;
     cursor: pointer;
+    overflow: hidden;
     border-radius: 50%;
     align-items: center;
     transition: .5s ease;
     flex-direction: column;
-    box-shadow: 0px 0px 10px 5px rgba(24, 3, 64, .2);
+    justify-content: center;
+    border: 2px solid
+            ${({ theme }) => theme.palette.opacity.dark[20] };
 
     img {
         width: 100%;
         height: 100%;
         border: none;
-        border-radius: 50%;
-    }
+        transition: .3s ease;
 
-    :hover {
-        width: 3.5rem;
-        height: 3.5rem;
+        :hover {
+            width: 120%;
+            height: 120%;
+        }
     }
 `;

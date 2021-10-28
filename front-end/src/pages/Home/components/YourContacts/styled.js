@@ -27,7 +27,8 @@ export const ContactContainer = styled.div`
     transition: .5s ease;
     padding: 0 20px;
     justify-content: space-between;
-    box-shadow: 0px 0px 10px -1px rgba(24, 3, 64, .3);
+    box-shadow: 0px 0px 10px -1px
+                ${({ theme }) => theme.palette.opacity.dark[30] };
     background: ${({ theme }) => theme.palette.background.medium };
 
     :hover {
@@ -42,7 +43,8 @@ export const ContactContainer = styled.div`
         position: relative;
         border-radius: 50%;
         place-items: center;
-        border: 2px solid rgba(24, 3, 64, .2);
+        border: 2px solid
+                ${({ theme }) => theme.palette.opacity.dark[20] };
 
         img {
             width: 100%;

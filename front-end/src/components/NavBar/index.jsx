@@ -53,6 +53,10 @@ const NavBar = ({ page }) => {
 
             <UserAccount>
                 <ProfileWrapper>
+                    <img 
+                        src={'https://github.com/rodrigsmor.png'}
+                        alt={'foto de perfil'}
+                    />
                 </ ProfileWrapper>
 
                 <h5>Rodrigo Moreira</h5>

@@ -11,7 +11,8 @@ export const MainContainer = styled(Main)`
     aside {
         padding: 15px 20px;
         border-radius: 15px;
-        box-shadow: 0px 0px 10px -1px rgba(24, 3, 64, .2);
+        box-shadow: 0px 0px 10px -1px
+                    ${({ theme }) => theme.palette.opacity.dark[20] };
         background: ${({ theme }) => theme.palette.background.contrast };
     }  
 `;

@@ -22,7 +22,7 @@ export const ContactMin = styled.div`
     border-radius: 15px;
     grid-template-rows: 2fr 1fr;
 
-    div {
+    figure {
         width: 5em;
         height: 5em;
         grid-row: 1/3;
@@ -32,12 +32,13 @@ export const ContactMin = styled.div`
         align-items: center;
         border-radius: 50%;
         justify-content: center;
-        overflow: hidden;
+        overflow: hidden;    
+        border: 2px solid
+                ${({ theme }) => theme.palette.opacity.dark[20]};
 
         img {
             width: 100%;
             height: auto;
-            margin: auto;
             margin: auto;
             position: absolute;
             object-fit: center;
@@ -45,7 +46,7 @@ export const ContactMin = styled.div`
             
             :hover {
                 width: 120%;
-                height: aut;
+                height: auto;
             }
         }
     }

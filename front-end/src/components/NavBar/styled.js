@@ -29,7 +29,7 @@ export const Options = styled.ul`
         }
 
         &:hover {
-            background: ${({ theme }) => theme.palette.opacity[30] };
+            background: ${({ theme }) => theme.palette.opacity.main[30] };
         }
 
         &.selected {
@@ -90,7 +90,7 @@ export const UserAccount = styled.footer`
     border-radius: 15px;
     grid-template-areas: 'picture userName button'
                          'picture subtitle button';
-    background: ${({ theme }) => theme.palette.opacity[30]};
+    background: ${({ theme }) => theme.palette.opacity.main[30]};
     
     h5 {
         font-size: 12px;
@@ -105,15 +105,17 @@ export const UserAccount = styled.footer`
     }
 `;
 
-export const ProfileWrapper = styled.div`
+export const ProfileWrapper = styled.figure`
     width: 2rem;
     height: 2rem;
     display: grid;
     grid-area: picture;
     border-radius: 50%;
     place-items: center;
-    background: blue;
     margin: 0 5px 0 0;
+    overflow: hidden;
+    border: 1px solid
+            ${({ theme }) => theme.palette.opacity.dark[30] };
 
     img {
         width: 100%;
@@ -140,6 +142,6 @@ export const MoreInformations = styled.button`
     }
 
     :hover {
-        background: ${({ theme }) => theme.palette.opacity[80] };
+        background: ${({ theme }) => theme.palette.opacity.main[80] };
     }
 `;
