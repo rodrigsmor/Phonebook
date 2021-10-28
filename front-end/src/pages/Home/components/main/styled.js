@@ -13,22 +13,7 @@ export const MainContainer = styled(Main)`
         border-radius: 15px;
         box-shadow: 0px 0px 10px -1px rgba(24, 3, 64, .2);
         background: ${({ theme }) => theme.palette.background.contrast };
-    }
-
-    .box-2 {
-        grid-column: 3/5;
-    }
-
-    .box-4 {
-        grid-row: 3/5;
-        grid-column: 1/4;
-        border-radius: 15px 15px 0 0;
-    }
-
-    .box-5 {
-        grid-row: 2/5;
-        margin: 0 0 20px 0;
-    }
+    }  
 `;
 
 export const GreetingsBox = styled.section`

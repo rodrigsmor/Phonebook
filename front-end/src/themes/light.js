@@ -13,6 +13,7 @@ const light = {
         },
         background: {
             main: '#eae1fc',
+            medium: '#f5f0ff',
             contrast: '#ffffff'
         },
         opacity: {

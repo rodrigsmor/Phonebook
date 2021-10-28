@@ -3,6 +3,9 @@ import {
     GreetingsBox
 } from './styled'
 
+import ToRemember from '../ToRemember';
+import Statistics from '../Statistics'
+import YourContacts from '../YourContacts';
 import RecentContacts from '../RecentContacts';
 import image from '../../../../images/welcome.svg';
 
@@ -22,10 +25,10 @@ const Main = () => {
                 <img src={image} alt={'character'} />
             </GreetingsBox>
 
-            <section className="box-2"></section>
+            <ToRemember />
             <RecentContacts />
-            <section className="box-4"></section>
-            <aside className="box-5"></aside>
+            <YourContacts />
+            <Statistics />
         </MainContainer>
     );
 }
