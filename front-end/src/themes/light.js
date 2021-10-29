@@ -16,10 +16,16 @@ const light = {
             medium: '#f5f0ff',
             contrast: '#ffffff'
         },
+        status: {
+            error: '#DB2B1E',
+            warning: '#FFC655',
+            success: '#00C7A1'
+        },
         opacity: {
             main: {
                 30: 'rgba(234, 225, 252, .3)',
                 50: 'rgba(234, 225, 252, .5)',
+                60: 'rgba(234, 225, 252, .6)',
                 80: 'rgba(234, 225, 252, .8)'
             },
             dark: {

@@ -1,6 +1,7 @@
+import { useState } from 'react';
+import { VscHome } from 'react-icons/vsc';
 import { IoMdMore } from 'react-icons/io';
 import { RiAddLine } from 'react-icons/ri';
-import { VscHome } from 'react-icons/vsc';
 
 import {
     LinkTo,
@@ -19,7 +20,11 @@ import {
     BsGear
 } from 'react-icons/bs';
 
+import AddContact from '../modals/AddContact';
+
 const NavBar = ({ page }) => {
+    const [ displayModal, setDisplayModal ] = useState('');
+
     return (
         <NavBarContainer>
             <Logo />
@@ -35,7 +40,11 @@ const NavBar = ({ page }) => {
                     </LinkTo>
                 </li>
                 <li>
-                    <ContactButton>
+                    <ContactButton
+                        onClick={() => {
+                            setDisplayModal('display');
+                        }}
+                    >
                         <RiAddLine /> Novo contato
                     </ContactButton>
                 </li>
@@ -57,7 +66,7 @@ const NavBar = ({ page }) => {
                         src={'https://github.com/rodrigsmor.png'}
                         alt={'foto de perfil'}
                     />
-                </ ProfileWrapper>
+                </ProfileWrapper>
 
                 <h5>Rodrigo Moreira</h5>
                 <h6>Usuário 1</h6>
@@ -66,6 +75,11 @@ const NavBar = ({ page }) => {
                     <IoMdMore />
                 </MoreInformations>
             </UserAccount>
+            
+            <AddContact 
+                display={displayModal}
+                setDisplay={setDisplayModal}
+            />
         </NavBarContainer>
     );
 }
