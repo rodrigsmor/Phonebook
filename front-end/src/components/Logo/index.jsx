@@ -7,7 +7,9 @@ import LogoSvg from '../../images/logoSvg';
 
 const Logo = () => {
     return (
-        <LogoContainer>
+        <LogoContainer
+            className={'logo'}
+        >
             <LogoSvg />
             <LogoTypo>
                 Cont
