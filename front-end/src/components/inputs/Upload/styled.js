@@ -9,10 +9,21 @@ export const UploadContainer = styled.div`
     place-items: center;
     background: ${({ theme }) => theme.palette.background.main };
     box-shadow: 0px 0px 8px 0
-                ${({ theme }) => theme.palette.opacity.dark[30] };
+                ${({ theme }) => theme.palette.opacity.dark[50] };
     
     input {
         display: none;
+    }
+
+    .userIcon {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: transparent;
+
+        g {
+            fill: ${({ theme }) => theme.palette.primary.main };
+        }
     }
     
     span {
