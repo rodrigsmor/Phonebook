@@ -1,10 +1,10 @@
 import {
-    InputBox,
     FormWrapper,
     ButtonsWrapper,
     ContactFormContainer
 } from './styled';
 
+import Input from '../../../../inputs/Input';
 import Upload from '../../../../inputs/Upload';
 
 const ContactForm = () => {
@@ -14,50 +14,30 @@ const ContactForm = () => {
             <h5>Preencha com as informações do contato</h5>
             <FormWrapper>
                 <Upload />
-                <InputBox className={'box-2'}>
-                    <input
-                        required
-                        type={'text'}
-                        name={'completeName'}
-                        autoComplete='none'
-                    />
-                    <label htmlFor={'completeName'}>
-                        Nome do Contato
-                    </label>
-                </InputBox>
-                <InputBox className={'box-3'}>
-                    <input
-                        required
-                        type={'text'}
-                        name={'email'}
-                        autoComplete={'none'}
-                    />
-                    <label htmlFor={'email'}>
-                        E-mail do contato
-                    </label>
-                </InputBox>
-                <InputBox className={'box-4'}>
-                    <input
-                        required
-                        type={'text'}
-                        name={'phone'}
-                        autoComplete={'none'}
-                    />
-                    <label htmlFor={'phone'}>
-                        Telefone do contato
-                    </label>
-                </InputBox>
-                <InputBox className={'box-5'}>
-                    <input
-                        required
-                        type={'text'}
-                        name={'phone'}
-                        autoComplete={'none'}
-                    />
-                    <label htmlFor={'phone'}>
-                        Grupo
-                    </label>
-                </InputBox>
+                <Input 
+                    type={'text'}
+                    className={'box-2'}
+                    name={'completeName'}
+                    labelContent={'Nome do contato'}
+                />
+                <Input
+                    type={'text'}
+                    name={'email'}
+                    className={'box-3'}
+                    labelContent={'Email do contato'}
+                />
+                <Input
+                    type={'text'}
+                    name={'phone'}
+                    className={'box-4'}
+                    labelContent={'Número de telefone'}
+                />
+                <Input
+                    type={'text'}
+                    name={'group'}
+                    className={'box-5'}
+                    labelContent={'Grupo'}
+                />
 
                 <ButtonsWrapper>
                     <button>Cancelar</button>
