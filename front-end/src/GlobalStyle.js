@@ -11,8 +11,10 @@ export default createGlobalStyle`
 
     html, body {
         width: 100%;
+        height: 100vh;
         max-width: 100%;
-        overflow-x: hidden;
+        overflow: hidden;
+        max-height: 100vh;
         background: ${({ theme }) => theme.palette.background.main };
     }
 

@@ -13,7 +13,9 @@ const AddContact = ({ display, setDisplay }) => {
         >
             <MainContentBox>
                 <SideBox />
-                <ContactForm />
+                <ContactForm 
+                    setDisplay={setDisplay}
+                />
             </MainContentBox>
         </BackgroundScreen>
     );

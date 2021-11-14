@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContactFormContainer = styled.section`
-    gap: 20px;
+    gap: 10px;
     grid-row: 1/2;
     display: flex;
     max-height: 100%;
@@ -47,7 +47,7 @@ export const FormWrapper = styled.form`
         grid-column: 1/3;
     }
 
-    .box-5 {
+    .selectContainer {
         grid-row: 3/4;
         grid-column: 3/4;
     }

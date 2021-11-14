@@ -8,12 +8,12 @@ export const InputBox = styled.div`
 
 export const InputElement = styled.input`
     width: 100%;
+    z-index: 2;
     outline: none;
     font-weight: 500;
     padding: 8px 13px;
     position: relative;
     border-radius: 15px;
-    z-index: 2;
     background: transparent;
     transition: border .5s linear;
     border: 2px solid
@@ -21,7 +21,8 @@ export const InputElement = styled.input`
     color: ${({ theme }) => theme.palette.primary.main };
     
     &:focus,
-    &:valid {
+    &:valid,
+    &.valid {
         border: 2px solid ${({ theme }) => theme.palette.primary.main };
         
         ~ label {
