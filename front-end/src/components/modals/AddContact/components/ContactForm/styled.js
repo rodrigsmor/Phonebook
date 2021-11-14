@@ -9,7 +9,6 @@ export const ContactFormContainer = styled.section`
     flex-direction: column;
     
     h1 {
-
         font-size: 2em;
         font-weight: 800;
     }
@@ -19,8 +18,8 @@ export const FormWrapper = styled.form`
     width: 100%;
     height: 100%;
     display: grid;
-    padding: 0 5px;
     grid-gap: 3vh;
+    padding: 0 5px;
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: 150px 1fr 1fr;
 

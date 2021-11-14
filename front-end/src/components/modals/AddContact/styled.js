@@ -28,8 +28,8 @@ export const MainContentBox = styled.main`
     visibility: hidden;
     
     .display & {
-        width: 70%;
-        height: 80%;
+        width: 60%;
+        height: 70%;
         padding: 2em;
         display: grid;
         grid-gap: 1em;

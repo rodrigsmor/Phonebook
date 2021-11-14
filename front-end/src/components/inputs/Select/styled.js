@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { 
-    InputBox,
     InputElement,
     LabelComponent,
 } from '../Input/styled';
