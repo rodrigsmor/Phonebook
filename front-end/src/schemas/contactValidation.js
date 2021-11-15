@@ -10,8 +10,10 @@ const schema = yup.object().shape({
             .email("Digite um e-mail válido"),
     phone: yup
             .string()
-            .min(19, "precisa ter 19 caracteres")
-            .max(20, "precisa ter ")
+            .test(
+                'len', "Digite um telefone válido", 
+                val => val.replace(/\D/g, '').length === 13
+            )
             .required("O telefone é obrigatório"),
     groups: yup
              .string()

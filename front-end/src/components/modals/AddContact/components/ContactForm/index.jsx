@@ -11,6 +11,7 @@ import schema from '../../../../../schemas/contactValidation'
 import Input from '../../../../inputs/Input';
 import Upload from '../../../../inputs/Upload';
 import Select from '../../../../inputs/Select';
+import MaskedInput from '../../../../inputs/MaskedInput';
 
 const ContactForm = ({ setDisplay }) => {
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -18,6 +19,8 @@ const ContactForm = ({ setDisplay }) => {
     });
 
     const newContact = (contact) => {
+        /* contact.phone = contact.phone.replace(/[^0-9+]/g, '') */
+        // alert(contact.groups);
         console.log(contact);
     }
 
@@ -47,8 +50,7 @@ const ContactForm = ({ setDisplay }) => {
                     <li className={'errors'}>{ errors.email?.message }</li>
                 </span>
                 <span className={'field-4'}>
-                    <Input
-                        type={'text'}
+                    <MaskedInput
                         name={'phone'}
                         register={register}
                         labelContent={'Número de telefone'}
