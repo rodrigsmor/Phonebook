@@ -4,40 +4,68 @@ import {
     ContactFormContainer
 } from './styled';
 
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import schema from '../../../../../schemas/contactValidation'
+
 import Input from '../../../../inputs/Input';
 import Upload from '../../../../inputs/Upload';
 import Select from '../../../../inputs/Select';
 
 const ContactForm = ({ setDisplay }) => {
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(schema),
+    });
+
+    const newContact = (contact) => {
+        console.log(contact);
+    }
+
     return (
         <ContactFormContainer>
             <h1>Novo contato</h1>
             <h5>Preencha com as informações do contato</h5>
-            <FormWrapper>
+            
+            <FormWrapper onSubmit={handleSubmit(newContact)}>
                 <Upload />
-                <Input
-                    type={'text'}
-                    className={'box-2'}
-                    name={'completeName'}
-                    labelContent={'Nome do contato'}
-                />
-                <Input
-                    type={'text'}
-                    name={'email'}
-                    className={'box-3'}
-                    labelContent={'Email do contato'}
-                />
-                <Input
-                    type={'text'}
-                    name={'phone'}
-                    className={'box-4'}
-                    labelContent={'Número de telefone'}
-                />
-                <Select />
+                <span className={'field-2'}>
+                    <Input
+                        type={'text'}
+                        name={'completeName'}
+                        register={register}
+                        labelContent={'Nome do contato'}
+                    />
+                    <li className={'errors'}>{ errors.completeName?.message }</li>
+                </span>
+                <span className={'field-3'}>
+                    <Input
+                        type={'text'}
+                        name={'email'}
+                        register={register}
+                        labelContent={'Email (opcional)'}
+                    />
+                    <li className={'errors'}>{ errors.email?.message }</li>
+                </span>
+                <span className={'field-4'}>
+                    <Input
+                        type={'text'}
+                        name={'phone'}
+                        register={register}
+                        labelContent={'Número de telefone'}
+                    />
+                    <li className={'errors'}>{ errors.phone?.message }</li>
+                </span>
+                <span className={'field-5'}>
+                    <Select
+                        register={register}
+                    />
+                    <li className={'errors'}>{ errors.groups?.message }</li>
+                </span>
 
                 <ButtonsWrapper>
                     <button
-                        onClick={() => {
+                        onClick={(event) => {
+                            event.preventDefault();
                             setDisplay('');
                         }}
                     >

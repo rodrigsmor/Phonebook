@@ -10,7 +10,7 @@ import {
 import { useState, useEffect } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 
-const Select = () => {
+const Select = ({ register }) => {
     const [ value, setValue ] = useState('');
     const [ valid, setValid ] = useState('');
     const [ focus, setFocus ] = useState('');
@@ -41,6 +41,7 @@ const Select = () => {
                     type={'text'}
                     value={value}
                     name={'groups'}
+                    { ...register('groups') }
                     placeholder={'selecione o grupo'}
                     autoComplete={'none'}
                     className={valid}

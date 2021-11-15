@@ -21,7 +21,6 @@ export const InputElement = styled.input`
     color: ${({ theme }) => theme.palette.primary.main };
     
     &:focus,
-    &:valid,
     &.valid {
         border: 2px solid ${({ theme }) => theme.palette.primary.main };
         

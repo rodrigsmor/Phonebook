@@ -21,7 +21,7 @@ export const FormWrapper = styled.form`
     grid-gap: 3vh;
     padding: 0 5px;
     grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: 150px 1fr 1fr;
+    grid-template-columns: 150px 1fr 2.5fr;
 
     .upload {
         width: 150px;
@@ -30,25 +30,37 @@ export const FormWrapper = styled.form`
         grid-column: 1/2;
     }
 
-    .box-2 {
+    .field-2 {
         grid-row: 1/2;
         grid-column: 2/4;
-        height: 100%;
     }
 
-    .box-3 {
+    .field-3 {
         grid-row: 2/3;
         grid-column: 2/4;
     }
 
-    .box-4 {
+    .field-4 {
         grid-row: 3/4;
         grid-column: 1/3;
     }
 
-    .selectContainer {
+    .field-5 {
         grid-row: 3/4;
         grid-column: 3/4;
+    }
+
+    span {
+        display: grid;
+        grid-gap: 5px;
+        
+        .errors {
+            font-size: 13px;
+            font-weight: 600;
+            list-style: none;
+            margin: 0 0 0 10px;
+            color: ${({ theme }) => theme.palette.status.error }
+        }
     }
 `;
 
