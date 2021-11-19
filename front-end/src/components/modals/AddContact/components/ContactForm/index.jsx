@@ -4,6 +4,7 @@ import {
     ContactFormContainer
 } from './styled';
 
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from '../../../../../schemas/contactValidation'
@@ -14,14 +15,31 @@ import Select from '../../../../inputs/Select';
 import MaskedInput from '../../../../inputs/MaskedInput';
 
 const ContactForm = ({ setDisplay }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const [ selectValue, setSelectValue ] = useState('');
+
+    const { 
+        register, 
+        handleSubmit, 
+        setValue,
+        reset, 
+        formState: { errors } 
+    } = useForm({
         resolver: yupResolver(schema),
     });
 
-    const newContact = (contact) => {
-        /* contact.phone = contact.phone.replace(/[^0-9+]/g, '') */
-        // alert(contact.groups);
-        console.log(contact);
+    const newContact = ( contact ) => {
+        resetValues();
+    }
+    
+    function resetValues() {
+        // fazer resetar somente quando a resposta da criação do usuario for ok
+        
+        reset({
+            phone: '+55 (__) _____-____',
+            group: '',
+        });
+        setSelectValue('');
+        setDisplay('');
     }
 
     return (
@@ -38,7 +56,7 @@ const ContactForm = ({ setDisplay }) => {
                         register={register}
                         labelContent={'Nome do contato'}
                     />
-                    <li className={'errors'}>{ errors.completeName?.message }</li>
+                    <p className={'errors'}>{ errors.completeName?.message }</p>
                 </span>
                 <span className={'field-3'}>
                     <Input
@@ -47,7 +65,7 @@ const ContactForm = ({ setDisplay }) => {
                         register={register}
                         labelContent={'Email (opcional)'}
                     />
-                    <li className={'errors'}>{ errors.email?.message }</li>
+                    <p className={'errors'}>{ errors.email?.message }</p>
                 </span>
                 <span className={'field-4'}>
                     <MaskedInput
@@ -55,20 +73,22 @@ const ContactForm = ({ setDisplay }) => {
                         register={register}
                         labelContent={'Número de telefone'}
                     />
-                    <li className={'errors'}>{ errors.phone?.message }</li>
+                    <p className={'errors'}>{ errors.phone?.message }</p>
                 </span>
                 <span className={'field-5'}>
                     <Select
                         register={register}
+                        value={selectValue}
+                        setValue={setSelectValue}
                     />
-                    <li className={'errors'}>{ errors.groups?.message }</li>
+                    <p className={'errors'}>{ errors.group?.message }</p>
                 </span>
 
                 <ButtonsWrapper>
                     <button
                         onClick={(event) => {
                             event.preventDefault();
-                            setDisplay('');
+                            resetValues();
                         }}
                     >
                         Cancelar
@@ -76,6 +96,9 @@ const ContactForm = ({ setDisplay }) => {
                     <input 
                         type={'submit'}
                         value={'Salvar'}
+                        onClick={() => {
+                            setValue('group', selectValue);
+                        }}
                     />
                 </ButtonsWrapper>
             </FormWrapper>

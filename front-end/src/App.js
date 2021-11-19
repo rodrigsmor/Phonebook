@@ -1,4 +1,5 @@
 import Routes from './routes';
+import dark from './themes/dark';
 import light from './themes/light';
 import GlobalStyles from './GlobalStyle';
 import { ThemeProvider } from 'styled-components';

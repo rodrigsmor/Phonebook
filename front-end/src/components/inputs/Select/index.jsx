@@ -10,8 +10,7 @@ import {
 import { useState, useEffect } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 
-const Select = ({ register }) => {
-    const [ value, setValue ] = useState('');
+const Select = ({ register, value, setValue, }) => {
     const [ valid, setValid ] = useState('');
     const [ focus, setFocus ] = useState('');
 
@@ -39,24 +38,24 @@ const Select = ({ register }) => {
                     readOnly
                     type={'text'}
                     value={value}
-                    name={'groups'}
-                    { ...register('groups') }
-                    placeholder={'selecione o grupo'}
-                    autoComplete={'none'}
+                    name={'group'}
                     className={valid}
+                    { ...register('group') }
+                    placeholder={'selecione o grupo'}
                     onFocus={() => {
                         setFocus('focus');
                     }}
                 />
 
-                <LabelSelect htmlFor={'groups'}>
+                <LabelSelect htmlFor={'group'}>
                     Grupo
                 </LabelSelect>
 
                 <ButtonSelect
                     onClick={(event) => {
                         event.preventDefault();
-                        setFocus('focus');
+                        focus === 'focus' ? setFocus('')
+                                          : setFocus('focus');
                     }}
                 >
                     <FiChevronDown />
@@ -72,8 +71,8 @@ const Select = ({ register }) => {
                             <Options
                                 key={index}
                                 onClick={() => {
+                                        setFocus('')   
                                         setValue(item);
-                                        setFocus('') 
                                     }
                                 }
                             >

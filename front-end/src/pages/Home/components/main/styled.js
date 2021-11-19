@@ -31,9 +31,11 @@ export const GreetingsBox = styled.section`
     article {
         h3 {
             font-size: 18pt;
-        }   
+        }
+
         p {
             font-size: 13px;
+            color: ${({ theme }) => theme.palette.secondary.main }
         }
     }
 
