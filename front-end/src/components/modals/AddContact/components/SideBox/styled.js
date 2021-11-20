@@ -17,4 +17,14 @@ export const SideContainer = styled.aside`
         text-align: center;
         color: ${({ theme }) => theme.palette.primary.main };
     }
+    
+    .logo {
+        h2 {
+            color: ${({ theme }) => theme.palette.primary.main };
+        }
+        
+        svg > g {
+            fill: ${({ theme }) => theme.palette.primary.main };
+        }
+    }
 `;

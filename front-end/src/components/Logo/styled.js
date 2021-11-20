@@ -14,7 +14,7 @@ export const LogoContainer = styled.hgroup`
         height: 3rem;
         
         g {
-            fill: ${({ theme }) => theme.palette.primary.main };
+            fill: ${({ theme }) => theme.palette.primary.light };
         }
     }
 `;
@@ -22,7 +22,7 @@ export const LogoContainer = styled.hgroup`
 export const LogoTypo = styled.h2`
     font-size: 15pt;
     font-weight: 700;
-    color: ${({ theme }) => theme.palette.primary.main };
+    color: ${({ theme }) => theme.palette.primary.light };
 
     span {
         color: ${({ theme }) => theme.palette.secondary.main };

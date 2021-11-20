@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components';
 function App() {
   return (
     <>
-      <ThemeProvider theme={dark}>
+      <ThemeProvider theme={light}>
         <GlobalStyles />
         <Routes />
       </ThemeProvider>

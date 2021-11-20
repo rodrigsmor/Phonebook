@@ -35,7 +35,7 @@ export const Options = styled.ul`
         &.selected {
             width: 100%;
             border-radius: 0px;
-            border-right: ${({ theme }) => theme.palette.primary.main } 3px solid;
+            border-right: ${({ theme }) => theme.palette.primary.light } 3px solid;
             background: linear-gradient(
                 to right,
                 transparent,
@@ -51,10 +51,10 @@ export const LinkTo = styled(Link)`
     font-size: 15px;
     align-items: center;
     text-decoration: none;
-    color: ${({ theme }) => theme.palette.primary.main };
+    color: ${({ theme }) => theme.palette.primary.light };
     
     svg, g {
-        fill: ${({ theme }) => theme.palette.primary.main };
+        fill: ${({ theme }) => theme.palette.primary.light };
     }
     `;
 
@@ -69,7 +69,7 @@ export const ContactButton = styled.button`
     transition: .5s linear;
     border: transparent 0px solid;
     color: ${({ theme }) => theme.palette.background.contrast };
-    background: ${({ theme }) => theme.palette.primary.main };
+    background: ${({ theme }) => theme.palette.primary.light };
     
     svg, g {
         font-size: 20px;
@@ -115,7 +115,7 @@ export const ProfileWrapper = styled.figure`
     margin: 0 5px 0 0;
     overflow: hidden;
     border: 1px solid
-            ${({ theme }) => theme.palette.opacity.dark[30] };
+            ${({ theme }) => theme.palette.opacity.dark[40] };
 
     img {
         width: 100%;

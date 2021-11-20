@@ -34,7 +34,7 @@ export const ContactMin = styled.div`
         justify-content: center;
         overflow: hidden;    
         border: 2px solid
-                ${({ theme }) => theme.palette.opacity.dark[20]};
+                ${({ theme }) => theme.palette.opacity.dark[40]};
 
         img {
             width: 100%;

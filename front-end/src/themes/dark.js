@@ -2,19 +2,19 @@ const dark = {
     title: 'dark',
     palette: {
         primary: {
-            light: '#C8ABFF',
-            main: '#FFFFFF',
-            dark: '#9F05FF'
+            light: '#F6F3FD',
+            main: '#8554e2',
+            dark: '#CBB6F3'
         },
         secondary: {
             light: '#B593C4',
-            main: '#925db0',
-            dark: '#dbc8e6'
+            main: '#A264C4',
+            dark: '#E8D8F0'
         },
         background: {
-            main: '#180c2e',
-            medium: '#492a82',
-            contrast: '#341d5e'
+            main: '#110626',
+            medium: '#1A0A39',
+            contrast: '#230D4C'
         },
         status: {
             error: '#DB2B1E',
@@ -32,6 +32,7 @@ const dark = {
                 10: 'rgba(234, 225, 252, .1)',
                 20: 'rgba(24, 3, 64, .2)',
                 30: 'rgba(24, 3, 64, .3)',
+                40: 'rgba(234, 225, 252, .3)',
                 50: 'rgba(234, 225, 252, .3)'
             }
         }

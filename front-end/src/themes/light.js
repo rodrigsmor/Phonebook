@@ -2,14 +2,14 @@ const light = {
     title: 'light',
     palette: {
         primary: {
-            light: '#8d76ab',
+            light: '#8F61E4',
             main: '#8554E2',
             dark: '#290966'
         },
         secondary: {
-            light: '#B593C4',
+            light: '#B27ECE',
             main: '#944BBB',
-            dark: '#452259'
+            dark: '#54296C'
         },
         background: {
             main: '#eae1fc',
@@ -32,6 +32,7 @@ const light = {
                 10: 'rgba(24, 3, 64, .1)',
                 20: 'rgba(24, 3, 64, .2)',
                 30: 'rgba(24, 3, 64, .3)',
+                40: 'rgba(24, 3, 64, .4)',
                 50: 'rgba(24, 3, 64, .5)'
             }
         }

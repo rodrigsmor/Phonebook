@@ -44,7 +44,7 @@ export const ContactContainer = styled.div`
         border-radius: 50%;
         place-items: center;
         border: 2px solid
-                ${({ theme }) => theme.palette.opacity.dark[20] };
+                ${({ theme }) => theme.palette.opacity.dark[40] };
 
         img {
             width: 100%;
