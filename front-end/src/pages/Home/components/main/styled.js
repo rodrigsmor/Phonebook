@@ -35,7 +35,7 @@ export const GreetingsBox = styled.section`
 
         p {
             font-size: 13px;
-            color: ${({ theme }) => theme.palette.secondary.main }
+            color: ${({ theme }) => theme.palette.primary.light }
         }
     }
 

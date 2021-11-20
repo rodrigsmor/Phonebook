@@ -55,6 +55,7 @@ export const ContactMin = styled.div`
         grid-row: 3/4;
         font-size: 10px;
         font-weight: 700;
-        line-height: 5px;
+        line-height: 5px;        
+        color: ${({ theme }) => theme.palette.secondary.dark };
     }
 `;

@@ -43,7 +43,7 @@ export const NotificationButton = styled.button`
     position: relative;
     border-radius: 15px;
     color: ${({ theme }) => theme.palette.primary.dark };
-    background: ${({ theme }) => theme.palette.primary.light };
+    background: ${({ theme }) => theme.palette.background.contrast };
     
     ::before {
         content: '';

@@ -28,12 +28,13 @@ const ContactForm = ({ setDisplay }) => {
     });
 
     const newContact = ( contact ) => {
-        resetValues();
+        // fazer resetar somente quando a resposta da criação do usuario for ok
+        setTimeout(() => {
+            resetValues();
+        }, 2000);
     }
     
     function resetValues() {
-        // fazer resetar somente quando a resposta da criação do usuario for ok
-        
         reset({
             phone: '+55 (__) _____-____',
             group: '',

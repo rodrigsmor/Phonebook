@@ -2,7 +2,7 @@ const light = {
     title: 'light',
     palette: {
         primary: {
-            light: '#B39CD1',
+            light: '#8d76ab',
             main: '#8554E2',
             dark: '#290966'
         },

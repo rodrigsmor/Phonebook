@@ -1,20 +1,20 @@
-const light = {
-    title: 'light',
+const dark = {
+    title: 'dark',
     palette: {
         primary: {
-            light: '#B39CD1',
-            main: '#fff',
-            dark: '#e6c3fa'
+            light: '#C8ABFF',
+            main: '#FFFFFF',
+            dark: '#9F05FF'
         },
         secondary: {
             light: '#B593C4',
             main: '#925db0',
-            dark: '#452259'
+            dark: '#dbc8e6'
         },
         background: {
-            main: '#452259',
-            medium: '#3c0d54',
-            contrast: '#80499c'
+            main: '#180c2e',
+            medium: '#492a82',
+            contrast: '#341d5e'
         },
         status: {
             error: '#DB2B1E',
@@ -23,16 +23,16 @@ const light = {
         },
         opacity: {
             main: {
-                30: 'rgba(234, 225, 252, .3)',
-                50: 'rgba(234, 225, 252, .5)',
-                60: 'rgba(234, 225, 252, .6)',
-                80: 'rgba(234, 225, 252, .8)'
+                30: 'rgba(24, 3, 64, .3)',
+                50: 'rgba(24, 3, 64, .5)',
+                60: 'rgba(24, 3, 64, .6)',
+                80: 'rgba(24, 3, 64, .8)'
             },
             dark: {
-                10: 'rgba(24, 3, 64, .1)',
+                10: 'rgba(234, 225, 252, .1)',
                 20: 'rgba(24, 3, 64, .2)',
                 30: 'rgba(24, 3, 64, .3)',
-                50: 'rgba(24, 3, 64, .5)'
+                50: 'rgba(234, 225, 252, .3)'
             }
         }
     },
@@ -41,4 +41,4 @@ const light = {
     }
 }
 
-export default light;
+export default dark;

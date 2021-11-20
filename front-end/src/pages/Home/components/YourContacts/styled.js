@@ -54,6 +54,10 @@ export const ContactContainer = styled.div`
         }
     }
 
+    h4, h5 {
+        color: ${({ theme }) => theme.palette.secondary.dark };
+    }
+
     h4 {
         width: 30%;
         text-align: center;

@@ -8,7 +8,7 @@ export const SwitchWrapper = styled.div`
     position: relative;
     align-items: center;
     border-radius: 15px;
-    background: ${({ theme }) => theme.palette.primary.light };
+    background: ${({ theme }) => theme.palette.background.contrast };
     
     button {
         left: 0;
@@ -19,7 +19,7 @@ export const SwitchWrapper = styled.div`
         border-radius: 50%;
         background: greenyellow;
         transition: .5s ease-out;
-        background: ${({ theme }) => theme.palette.background.contrast };
+        background: ${({ theme }) => theme.palette.background.main };
 
         svg {
             font-size: 10px;

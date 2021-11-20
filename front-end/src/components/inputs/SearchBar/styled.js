@@ -9,7 +9,7 @@ export const SearchBox = styled.form`
     padding: 0 0 0 10px;
     justify-content: space-between;
     grid-template-columns: 1fr 2.5rem;
-    background: ${({ theme }) => theme.palette.primary.light };
+    background: ${({ theme }) => theme.palette.background.contrast };
 `;
 
 export const InputBox = styled.input`

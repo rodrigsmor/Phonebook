@@ -26,6 +26,7 @@ export const StatisticsTable = styled.table`
         th {
             font-weight: 600;
             text-align: left;
+            color: ${({ theme }) => theme.palette.secondary.main };
         }
 
         td {
