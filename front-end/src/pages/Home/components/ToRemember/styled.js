@@ -45,8 +45,7 @@ export const ContactMin = styled.div`
             transition: .5s ease;
             
             :hover {
-                width: 120%;
-                height: auto;
+                transform: scale(1.8);
             }
         }
     }

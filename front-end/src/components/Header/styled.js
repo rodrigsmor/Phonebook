@@ -50,7 +50,7 @@ export const NotificationButton = styled.button`
         display: block;
         width: 0;
         height: 0;
-        background: ${({ theme }) => theme.palette.opacity.dark[10] };
+        background: ${({ theme }) => theme.palette.opacity.dark[40] };
         position: absolute;
         border-radius: 50%;
         transition: .3s ease-in-out;

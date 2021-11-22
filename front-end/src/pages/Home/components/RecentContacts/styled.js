@@ -45,13 +45,12 @@ export const ContactsMin = styled.figure`
 
     img {
         width: 100%;
-        height: 100%;
+        height: auto;
         border: none;
         transition: .3s ease;
 
         :hover {
-            width: 120%;
-            height: 120%;
+            transform: scale(1.8);
         }
     }
 `;

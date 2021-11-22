@@ -20,15 +20,16 @@ export const BackgroundScreen = styled.div`
         border-radius: 0;
         backdrop-filter: blur(25px);
         background: ${({ theme }) => theme.palette.opacity.dark[30] };
-        
     }
 `;
 
 export const MainContentBox = styled.main`
+    opacity: 0;
     visibility: hidden;
-    
+
     .display & {
         width: 60%;
+        opacity: 1;
         height: 70%;
         padding: 2em;
         display: grid;
@@ -36,6 +37,7 @@ export const MainContentBox = styled.main`
         visibility: visible;
         border-radius: 15px;
         grid-template-rows: 1fr;
+        transition: all .5s ease;
         grid-template-columns: 1fr 2fr;
         background: ${({ theme }) => theme.palette.background.main };
         box-shadow: 0px 0px 10px -1px
