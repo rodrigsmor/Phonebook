@@ -5,26 +5,27 @@ import {
 import { BsCloudSun, BsCloudMoon } from 'react-icons/bs'
 
 import { useState } from 'react';
+import { useAuth } from '../../../providers/auth';
 
 const Switcher = () => {
-    const [ mode, setMode ] = useState('light');
+    const { theme, setTheme } = useAuth();
     const [ icon, setIcon ] = useState(BsCloudSun);
 
     return (
         <SwitchWrapper>
             <button
                 onClick={() => {
-                    let temp = mode === 'light' ? 'dark'
-                                                : 'light'
+                    let temp = theme === 'light' ? 'dark'
+                                                 : 'light'
                     
-                    setMode(temp);
+                    setTheme(temp);
 
-                    temp = mode === 'light' ? BsCloudMoon
-                                            : BsCloudSun;
+                    temp = theme === 'light' ? BsCloudMoon
+                                             : BsCloudSun;
 
                     setIcon(temp)
                 }}
-                className={mode}>
+                className={theme}>
                     {icon}
             </button>
         </SwitchWrapper>

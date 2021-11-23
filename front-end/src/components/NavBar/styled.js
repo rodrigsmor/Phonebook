@@ -29,18 +29,13 @@ export const Options = styled.ul`
         }
 
         &:hover {
-            background: ${({ theme }) => theme.palette.opacity.main[30] };
+            background: ${({ theme }) => theme.palette.opacity.dark[10] };
         }
 
         &.selected {
             width: 100%;
-            border-radius: 0px;
+            background: ${({ theme }) => theme.palette.secondary.main };
             border-right: ${({ theme }) => theme.palette.primary.light } 3px solid;
-            background: linear-gradient(
-                to right,
-                transparent,
-                ${({ theme }) => theme.palette.background.main }
-            );
         }
     }
 `;
@@ -56,7 +51,7 @@ export const LinkTo = styled(Link)`
     svg, g {
         fill: ${({ theme }) => theme.palette.primary.light };
     }
-    `;
+`;
 
 export const ContactButton = styled.button`
     display: flex;

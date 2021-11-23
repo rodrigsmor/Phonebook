@@ -13,13 +13,13 @@ import {
     MoreInformations
 } from './styled'
 
-import Logo from '../Logo';
 import { 
     BsTelephone,
     BsPerson,
     BsGear
 } from 'react-icons/bs';
 
+import Logo from '../Logo';
 import AddContact from '../modals/AddContact';
 
 const NavBar = ({ page }) => {
