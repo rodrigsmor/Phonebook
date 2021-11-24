@@ -34,22 +34,46 @@ export const Options = styled.ul`
 
         &.selected {
             width: 100%;
-            background: ${({ theme }) => theme.palette.secondary.main };
-            border-right: ${({ theme }) => theme.palette.primary.light } 3px solid;
+            border-radius: 0;
+            position: relative;
+            
+            :hover {
+                background: transparent;
+            }
         }
     }
 `;
 
 export const LinkTo = styled(Link)`
-    display: flex;
     gap: 8px;
+    display: flex;
     font-size: 15px;
     align-items: center;
     text-decoration: none;
     color: ${({ theme }) => theme.palette.primary.light };
     
     svg, g {
+        font-size: 18px;
         fill: ${({ theme }) => theme.palette.primary.light };
+    }
+
+    .selected & {
+        font-weight: 600;
+
+        svg, g {
+            font-size: 20px;
+        }
+
+        ::after {
+            right: 0;
+            width: 5px;
+            height: 5px;
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            background: ${({ theme }) => theme.palette.primary.light };
+        }
     }
 `;
 
