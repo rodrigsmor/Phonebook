@@ -12,13 +12,15 @@ import schema from '../../../../../schemas/contactValidation'
 import Input from '../../../../inputs/Input';
 import Upload from '../../../../inputs/Upload';
 import Select from '../../../../inputs/Select';
+import { useAuth } from '../../../../../providers/auth'
 import MaskedInput from '../../../../inputs/MaskedInput';
 
-const ContactForm = ({ setDisplay }) => {
+const ContactForm = () => {
+    const { setDisplayModal } = useAuth();
     const [ selectValue, setSelectValue ] = useState('');
 
     const { 
-        register, 
+        register,
         handleSubmit, 
         setValue,
         reset, 
@@ -40,7 +42,7 @@ const ContactForm = ({ setDisplay }) => {
             group: '',
         });
         setSelectValue('');
-        setDisplay('');
+        setDisplayModal('');
     }
 
     return (

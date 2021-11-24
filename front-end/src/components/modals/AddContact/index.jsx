@@ -3,19 +3,21 @@ import {
     BackgroundScreen,
 } from './styled';
 
+import { useAuth } from '../../../providers/auth';
+
 import SideBox from './components/SideBox';
 import ContactForm from './components/ContactForm';
 
-const AddContact = ({ display, setDisplay }) => {
+const AddContact = () => {
+    const { displayModal } = useAuth();
+
     return (
         <BackgroundScreen 
-            className={display}
+            className={displayModal}
         >
             <MainContentBox>
                 <SideBox />
-                <ContactForm 
-                    setDisplay={setDisplay}
-                />
+                <ContactForm />
             </MainContentBox>
         </BackgroundScreen>
     );

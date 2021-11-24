@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { VscHome } from 'react-icons/vsc';
 import { IoMdMore } from 'react-icons/io';
 import { RiAddLine } from 'react-icons/ri';
@@ -21,9 +20,10 @@ import {
 
 import Logo from '../Logo';
 import AddContact from '../modals/AddContact';
+import { useAuth } from '../../providers/auth';
 
 const NavBar = ({ page }) => {
-    const [ displayModal, setDisplayModal ] = useState('');
+    const { setDisplayModal } = useAuth();
 
     return (
         <NavBarContainer>
@@ -76,10 +76,7 @@ const NavBar = ({ page }) => {
                 </MoreInformations>
             </UserAccount>
             
-            <AddContact 
-                display={displayModal}
-                setDisplay={setDisplayModal}
-            />
+            <AddContact />
         </NavBarContainer>
     );
 }
