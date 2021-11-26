@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const LogoContainer = styled.hgroup`
     display: flex;
+    cursor: pointer;
     width: fit-content;
     height: fit-content;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    cursor: pointer;
 
     svg {
         width: 3rem;
