@@ -3,18 +3,18 @@ const dark = {
     palette: {
         primary: {
             light: '#F6F3FD',
-            main: '#8554e2',
-            dark: '#CBB6F3'
+            main: '#7702ff',
+            dark: '#b469ff'
         },
         secondary: {
-            light: '#B593C4',
-            main: '#A264C4',
-            dark: '#E8D8F0'
+            light: '#333',
+            main: '#B001FE',
+            dark: '#c95cfa'
         },
         background: {
-            main: '#110626',
-            medium: '#1A0A39',
-            contrast: '#230D4C'
+            main: '#0f011c',
+            medium: '#31184a',
+            contrast: '#241236'
         },
         status: {
             error: '#DB2B1E',
@@ -23,17 +23,17 @@ const dark = {
         },
         opacity: {
             main: {
-                30: 'rgba(24, 3, 64, .3)',
-                50: 'rgba(24, 3, 64, .5)',
-                60: 'rgba(24, 3, 64, .6)',
-                80: 'rgba(24, 3, 64, .8)'
+                30: 'rgba(15, 1, 28, .3)',
+                50: 'rgba(15, 1, 28, .5)',
+                60: 'rgba(15, 1, 28, .6)',
+                80: 'rgba(15, 1, 28, .8)'
             },
             dark: {
-                10: 'rgba(234, 225, 252, .1)',
-                20: 'rgba(24, 3, 64, .2)',
-                30: 'rgba(24, 3, 64, .3)',
-                40: 'rgba(234, 225, 252, .3)',
-                50: 'rgba(234, 225, 252, .3)'
+                10: 'rgba(180, 105, 255, .1)',
+                20: 'rgba(15, 1, 28, .2)',
+                30: 'rgba(15, 1, 28, .3)',
+                40: 'rgba(180, 105, 255, .3)',
+                50: 'rgba(180, 105, 255, .3)'
             }
         }
     },

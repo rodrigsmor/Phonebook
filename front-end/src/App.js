@@ -12,7 +12,7 @@ function App() {
   const currentTheme = () => {
     if(theme === 'light')
       return light;
-    else 
+    else
       return dark;
   }
   

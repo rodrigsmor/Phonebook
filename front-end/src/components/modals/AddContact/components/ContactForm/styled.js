@@ -53,14 +53,6 @@ export const FormWrapper = styled.form`
     span {
         display: grid;
         grid-gap: 5px;
-        
-        .errors {
-            font-size: 13px;
-            font-weight: 600;
-            list-style: none;
-            margin: 0 0 0 10px;
-            color: ${({ theme }) => theme.palette.status.error }
-        }
     }
 `;
 

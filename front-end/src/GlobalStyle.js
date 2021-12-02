@@ -21,4 +21,12 @@ export default createGlobalStyle`
     .notShow {
         display: none;
     }
+
+    .errors {
+        font-size: 13px;
+        list-style: none;
+        font-weight: 600;
+        margin: 0 0 0 10px;
+        color: ${({ theme }) => theme.palette.status.error }
+    }
 `;
