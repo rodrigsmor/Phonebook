@@ -13,10 +13,4 @@ export const MainComponent = styled.main`
     display: grid;
     grid-template-rows: repeat(1, 100vh);
     grid-template-columns: repeat(2, 1fr);
-
-    .illustration {
-        grid-row: 1/2;
-        grid-column: 1/2;
-        background: ${({ theme }) => theme.palette.primary.main };
-    }
 `;

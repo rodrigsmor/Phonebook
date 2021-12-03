@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const RegisterSection = styled.section`
-    padding: 4.5rem 6rem;
     display: grid;
     grid-row: 1/2;
     grid-column: 2/3;
+    padding: 4.5rem 6rem;
     background: transparent;
     grid-template-columns: 100%;
     grid-template-rows: 35pt 40pt auto;

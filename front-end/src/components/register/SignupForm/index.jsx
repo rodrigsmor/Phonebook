@@ -93,7 +93,7 @@ const SignupForm = () => {
             <ButtonWrapper>
                 <Link to={'/user/login'}>fazer login</Link>
                 <button 
-                    className={'next'} 
+                    className={'next'}
                 >
                     prosseguir
                 </button>
