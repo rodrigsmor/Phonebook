@@ -20,6 +20,7 @@ const MaskedInput = ({
             className={'inputContainer ' + className }
         >
             <InputMasked
+                id={name}
                 type={type}
                 name={name}
                 mask={'+55 (99) 99999-9999'}

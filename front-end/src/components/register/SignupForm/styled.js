@@ -35,6 +35,20 @@ export const FormFields = styled.div`
         grid-row: 3/4;
         grid-column: 2/3;
     }
+
+    &:nth-of-type(6) {
+        display: flex;
+        grid-row: 4/5;
+        grid-column: 1/3;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background: transparent;
+
+        p {
+            height: 15px;
+        }
+    }
 `;
 
 export const ButtonWrapper = styled.div`

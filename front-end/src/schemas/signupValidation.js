@@ -27,7 +27,14 @@ const signschema = yup.object().shape({
                         .oneOf(
                             [yup.ref('password'), null],
                             'As senhas precisam ser iguais'
-                        )
+                        ),
+    termsOfService: yup
+                .boolean()
+                .required('Precisa concordar com os termos')
+                .oneOf(
+                    [true],
+                    'Precisa concordar com os termos'
+                )
 });
 
 export default signschema;

@@ -36,6 +36,7 @@ const Select = ({ register, value, setValue, }) => {
             <div className={'inputWrapper'}>
                 <SelectInput
                     readOnly
+                    id={'group'}
                     type={'text'}
                     value={value}
                     name={'group'}

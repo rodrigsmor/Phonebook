@@ -1,10 +1,10 @@
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from '../../../schemas/signupValidation';
-import { MdNavigateNext } from 'react-icons/md';
-import { Link } from 'react-router-dom';
 
 import Input from '../../inputs/Input';
+import CheckBox from '../../inputs/CheckBox';
 
 import {
     FormFields,
@@ -20,6 +20,9 @@ const SignupForm = () => {
         formState: { errors }
     } = useForm({
         resolver: yupResolver(schema),
+        defaultValues: {
+            termsOfService: false,
+        }
     });
 
     const signUp = ( user ) => {
@@ -78,11 +81,21 @@ const SignupForm = () => {
                 <p className={'errors'}> { errors.confirmPassword?.message } </p>
             </ FormFields>
 
+            <FormFields>
+                <CheckBox
+                    register={register}
+                    name={'termsOfService'}
+                    labelContent={'Concorda com os nossos Termos de Uso?'}
+                />
+                <p className={'errors'}> { errors.termsOfService?.message } </p>
+            </FormFields>
+
             <ButtonWrapper>
-                <Link to={'/user/login'}>login</Link>
-                <button className={'next'}>
+                <Link to={'/user/login'}>fazer login</Link>
+                <button 
+                    className={'next'} 
+                >
                     prosseguir
-                    <MdNavigateNext />
                 </button>
             </ButtonWrapper>
         </SignupFormContainer>

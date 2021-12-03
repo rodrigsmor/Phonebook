@@ -20,6 +20,7 @@ const Input = ({
             className={'inputContainer ' + className }
         >
             <InputElement
+                id={name}
                 type={type}
                 name={name}
                 className={inputValue !== '' ? 'valid'
