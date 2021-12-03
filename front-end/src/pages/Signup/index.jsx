@@ -3,7 +3,7 @@ import {
     MainComponent
 } from '../../styles/RegisterStyled';
 
-import Header from '../../components/register/Header'
+import Header from '../../components/register/Header';
 import RegisterForm from '../../components/register/RegisterForm';
 import Illustration from '../../components/register/Illustration';
 

@@ -4,15 +4,15 @@ export const FooterContainer = styled.footer`
     bottom: 0;
     width: 100%;
     display: flex;
-    height: 5.4rem;
+    height: 5.6rem;
     padding: 0 5rem;
     position: fixed;
     align-items: center;
     justify-content: space-between;
-    background: ${({ theme }) => theme.palette.primary.main };
+    background: transparent;
 
     > * {
-        color: ${({ theme }) => theme.palette.background.contrast };
+        color: ${({ theme }) => theme.palette.primary.main };
     }
 `;
 
@@ -26,6 +26,6 @@ export const SocialMedias = styled.address`
     
     > * {
         cursor: pointer;
-        fill: ${({ theme }) => theme.palette.background.contrast };
+        fill: ${({ theme }) => theme.palette.primary.main };
     }
 `;

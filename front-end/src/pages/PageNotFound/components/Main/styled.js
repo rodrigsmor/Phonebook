@@ -35,11 +35,11 @@ export const Redirect = styled(Link)`
 export const ImageContainer = styled.figure`
     display: grid;
     grid-column: 1/2;
-    place-items: center;
+    padding: 15% 0 15% 15%;
 
     img {
-        height: 65%;
-        width: auto;
+        width: 100%;
+        height: 100%;
     }
 `;
 

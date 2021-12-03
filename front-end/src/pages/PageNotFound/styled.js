@@ -6,5 +6,5 @@ export const PageContainer = styled.div`
     display: flex;
     position: relative;
     flex-direction: column;
-    background: ${({ theme }) => theme.palette.background.contrast };
+    background: ${({ theme }) => theme.palette.background.main };
 `;
