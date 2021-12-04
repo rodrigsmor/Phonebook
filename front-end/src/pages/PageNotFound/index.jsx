@@ -9,7 +9,7 @@ import Header from '../../components/register/Header';
 const PageNotFound = () => {
     return (
         <PageContainer>
-            <Header />
+            <Header where={''} />
             <Main />
             <Footer />
         </PageContainer>

@@ -84,11 +84,6 @@ export const ButtonWrapper = styled.div`
             background: ${({ theme }) => theme.palette.primary.main };
             color: ${({ theme }) => theme.palette.background.contrast };
             
-            > * {
-                font-size: 15pt;
-                fill: ${({ theme }) => theme.palette.background.contrast };
-            }
-
             :hover {
                 background: ${({ theme }) => theme.palette.primary.dark };
             }

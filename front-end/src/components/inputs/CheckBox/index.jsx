@@ -10,7 +10,7 @@ const CheckBox = ({ labelContent, register, name  }) => {
             <CheckBoxElement
                 id={name}
                 type={'checkbox'}
-                {...register(name) }
+                { ...register(name) }
                 name={name}
             />
             <Label htmlFor={name}>
