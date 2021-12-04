@@ -5,10 +5,11 @@ import {
     LoginFormContainer,
 } from './styled';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import schema from '../../../schemas/loginValidation';
+import emailschema from '../../../schemas/login/emailValidation';
+import usernameschema from '../../../schemas/login/usernameValidation';
 
 import { HiOutlineMail } from 'react-icons/hi';
 import { AiOutlineUser } from 'react-icons/ai';
@@ -16,7 +17,14 @@ import { AiOutlineUser } from 'react-icons/ai';
 import Input from '../../inputs/Input';
 
 const LoginForm = () => {
+    const currentSchema = useRef(emailschema);
     const [ checked, setChecked ] = useState('e-mail');
+
+    useEffect(() => {
+        checked === 'e-mail' 
+            ? currentSchema.current = emailschema
+            : currentSchema.current = usernameschema;
+    }, [ checked ]);
 
     const {
         register,
@@ -24,7 +32,7 @@ const LoginForm = () => {
         reset,
         formState: { errors }
     } = useForm({
-        resolver: yupResolver(schema),
+        resolver: yupResolver(currentSchema.current),
     });
 
     const login = (user) => {
