@@ -72,54 +72,50 @@ export const ButtonsBox = styled.div`
     align-items: center;
     background: transparent;
     justify-content: space-between;
-    
-    div {
-        gap: 5px;
-        display: flex;
-        cursor: pointer;
-        padding: 5px 20px;
-        position: relative;
-        border-radius: 8px;
-        width: fit-content;
-        height: fit-content;
-        align-items: center;
-        justify-content: center;
-        background: ${({ theme }) => theme.palette.background.medium };
-        border: 1px solid 
-                ${({ theme }) => theme.palette.opacity.dark[20] };
-                
-        &.checked {
-            border: 2px solid 
-                    ${({ theme }) => theme.palette.primary.main };
-        }
+`;
 
-        label {
-            font-size: 12pt;
-            font-weight: 600;
+export const CheckBoxCard = styled.div`
+    gap: 5px;
+    display: flex;
+    cursor: pointer;
+    padding: 5px 20px;
+    position: relative;
+    border-radius: 8px;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    background: ${({ theme }) => theme.palette.background.medium };
+    border: 1px solid 
+            ${({ theme }) => theme.palette.opacity.dark[20] };
+            
+    &.checked {
+        border: 2px solid 
+                ${({ theme }) => theme.palette.primary.main };
+    }
+    
+    label {
+        font-size: 12pt;
+        font-weight: 600;
+        color: ${({ theme }) => theme.palette.primary.main };
+    }
+    
+    input {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        appearance: none;
+        position: absolute;
+        -webkit-appearance: none;
+        background: transparent;
+    }
+    
+    svg {
+        font-size: 15pt;
+        
+        > * {
             color: ${({ theme }) => theme.palette.primary.main };
-        }
-        
-        input {
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-            appearance: none;
-            position: absolute;
-            -webkit-appearance: none;
-            background: transparent;
-            
-            &:checked {
-                opacity: 1;
-            }
-        }
-        
-        svg {
-            font-size: 15pt;
-            
-            > * {
-                color: ${({ theme }) => theme.palette.primary.main };
-            }
         }
     }
 `;

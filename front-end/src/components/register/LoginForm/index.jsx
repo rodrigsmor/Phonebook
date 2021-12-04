@@ -2,6 +2,7 @@ import {
     FormFields,
     ButtonsBox,
     LoginButton,
+    CheckBoxCard,
     LoginFormContainer,
 } from './styled';
 
@@ -42,7 +43,7 @@ const LoginForm = () => {
     return (
         <LoginFormContainer onSubmit={handleSubmit(login)}>
             <ButtonsBox>
-                <div className={ checked === 'e-mail' ? 'checked' : '' }>
+                <CheckBoxCard className={ checked === 'e-mail' ? 'checked' : '' }>
                     <HiOutlineMail />
                     <input type={'checkbox'} id={'e-mail'} name={'e-mail'}
                         onClick={() => {
@@ -50,9 +51,9 @@ const LoginForm = () => {
                         }}
                     />
                     <label htmlFor={'e-mail'}>e-mail</label>
-                </div>
+                </CheckBoxCard>
 
-                <div className={ checked === 'username' ? 'checked' : '' }>
+                <CheckBoxCard className={ checked === 'username' ? 'checked' : '' }>
                     <AiOutlineUser />
                     <input type={'checkbox'} id={'username'} name={'username'}
                         onClick={() => {
@@ -60,7 +61,7 @@ const LoginForm = () => {
                         }}
                     />
                     <label htmlFor={'username'}>username</label>
-                </div>
+                </CheckBoxCard>
             </ButtonsBox>
 
             {

@@ -16,7 +16,7 @@ const Upload = () => {
             </LabelUpload>
             <input
                 type={'file'}
-                name={'contactPhoto'}
+                name={'image'}
                 id={'upload'}
                 accept={'image/*'}
             />

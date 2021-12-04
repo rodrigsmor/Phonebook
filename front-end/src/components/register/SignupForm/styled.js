@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FormWrapper } from '../RegisterForm/styled';
+import { FormWrapper, ButtonSubmit } from '../RegisterForm/styled';
 
 export const SignupFormContainer = styled(FormWrapper)`
     background: transparent;
@@ -51,6 +51,10 @@ export const FormFields = styled.div`
     }
 `;
 
+export const SignUpSubmit = styled(ButtonSubmit)`
+
+`;
+
 export const ButtonWrapper = styled.div`
     gap: 2rem;
     display: flex;
@@ -59,13 +63,12 @@ export const ButtonWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    button,
     a {
         display: flex;
         cursor: pointer;
         font-size: 10pt;
         font-weight: 600;
-        padding: 8px 50px;
+        padding: 8px 40px;
         width: max-content;
         height: max-content;
         border-radius: 15px;
@@ -77,16 +80,6 @@ export const ButtonWrapper = styled.div`
         
         :hover {
             background: ${({ theme }) => theme.palette.opacity.dark[10] };
-        }
-        
-        &.next {
-            padding: 8px 40px;
-            background: ${({ theme }) => theme.palette.primary.main };
-            color: ${({ theme }) => theme.palette.background.contrast };
-            
-            :hover {
-                background: ${({ theme }) => theme.palette.primary.dark };
-            }
         }
     }
 `;

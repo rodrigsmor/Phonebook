@@ -13,7 +13,7 @@ const light = {
         },
         background: {
             main: '#EEE1FB',
-            medium: '#f4f2f5',
+            medium: '#f6edff',
             contrast: '#ffffff'
         },
         status: {
