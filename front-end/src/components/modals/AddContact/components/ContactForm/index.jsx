@@ -51,7 +51,7 @@ const ContactForm = () => {
             <h5>Preencha com as informações do contato</h5>
             
             <FormWrapper onSubmit={handleSubmit(newContact)}>
-                <Upload />
+                <Upload name={'contactImage'} />
                 <span className={'field-2'}>
                     <Input
                         type={'text'}

@@ -8,18 +8,18 @@ import {
 import { useState } from 'react';
 import Upload from '../../inputs/Upload';
 
-const SecondPage = () => {
+const SecondPage = ({ name }) => {
     const [ checked, setChecked ] = useState('');
 
     return (
         <SecondPageContainer>
             <ElementDivisors>
-                <h4>Bem-vindo, Rodrigo</h4>
+                <h4>Bem-vindo, {name}</h4>
                 <h5>Selecione uma imagem para seu perfil</h5>
             </ElementDivisors>
 
             <ElementDivisors>
-                <Upload />
+                <Upload name={'userImage'} />
 
                 <CheckBoxContainer className={checked}>
                     <input

@@ -35,8 +35,9 @@ export const UploadContainer = styled.div`
     }
 
     img {
-        width: 100%;
-        height: auto;
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
     }
 
     :hover {

@@ -17,6 +17,7 @@ import {
 
 const SignupForm = () => {
     const pageNumber = useRef(0);
+    const name = useRef('Usuário');
 
     const { register, handleSubmit, reset,
         formState: { errors: {
@@ -65,6 +66,8 @@ const SignupForm = () => {
     const signUp = ( user ) => {
         reset();
 
+        name.current = user.completeName.split(" ", 1);
+
         pageNumber.current === 0
             ? pageNumber.current = 1
             : pageNumber.current = 0
@@ -106,18 +109,11 @@ const SignupForm = () => {
                                     className={'next'}
                                     value={'prosseguir'}
                                 />
-
-                                <button
-                                onClick={(e) => {
-                                            pageNumber.current = 1
-                                        }
-                                    }
-                                >sim</button>
                             </ButtonWrapper>
                         </>
                     )
                     : (
-                        <SecondPage />
+                        <SecondPage name={name.current} />
                     )
             }
         </SignupFormContainer>
