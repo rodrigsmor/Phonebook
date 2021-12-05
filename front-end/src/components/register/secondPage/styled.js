@@ -47,6 +47,11 @@ export const ElementDivisors = styled.div`
 
     &:nth-of-type(2) {
         grid-row: 2/3;
+        gap: 10px;
+
+        p {
+            height: 13px;
+        }
 
         .upload {
             width: 13rem;

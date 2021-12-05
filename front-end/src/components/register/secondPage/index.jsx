@@ -5,11 +5,19 @@ import {
     SecondPageContainer,
 } from './styled';
 
-import { useState } from 'react';
 import Upload from '../../inputs/Upload';
+import { useState, useEffect } from 'react';
 
-const SecondPage = ({ name }) => {
+import defaultPicture from '../../../images/dataUri/patternPicture';
+
+const SecondPage = ({ name, errors, setValue }) => {
     const [ checked, setChecked ] = useState('');
+
+    useEffect(() => {
+        checked === 'checked'
+            ? setValue('profilePicture', defaultPicture)
+            : setValue('profilePicture', ' ');
+    }, [checked, name, setValue]);
 
     return (
         <SecondPageContainer>
@@ -19,7 +27,8 @@ const SecondPage = ({ name }) => {
             </ElementDivisors>
 
             <ElementDivisors>
-                <Upload name={'userImage'} />
+                <Upload name={'profilePicture'} setValue={setValue} />
+                <p className={'errors'}> { errors?.message } </p>
 
                 <CheckBoxContainer className={checked}>
                     <input

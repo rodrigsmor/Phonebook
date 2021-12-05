@@ -5,9 +5,9 @@ import {
 
 import { BiCamera } from 'react-icons/bi';
 import UserSvg from '../../../images/UserSvg';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const Upload = ({ name }) => {
+const Upload = ({ name, setValue }) => {
     const [ image, setImage ] = useState(null);
     const [ preview, setPreview ] = useState(null);
 
@@ -17,25 +17,27 @@ const Upload = ({ name }) => {
 
             reader.onloadend = () => {
                 setPreview(reader.result);
+                setValue(name, reader.result);
             }
 
             reader.readAsDataURL(image);
         } else {
             setPreview(null);
+            setValue(name, ' ');
         }
-    }, [ image ]);
+    }, [image, name, setValue]);
 
     return (
         <UploadContainer
             className={'upload'}
         >
-            <LabelUpload htmlFor={'upload'}>
+            <LabelUpload htmlFor={name}>
                 <BiCamera />
             </LabelUpload>
             <input
-                type={'file'}
+                id={name}
                 name={name}
-                id={'upload'}
+                type={'file'}
                 accept={'image/*'}
                 onChange={(event) => {
                     const file = event.target.files[0];
@@ -44,9 +46,11 @@ const Upload = ({ name }) => {
                         setImage(file);
                     } else {
                         setImage(null);
+                        setValue(name, null);
                     }
                 }}
             />
+
             {
                 preview 
                     ? (

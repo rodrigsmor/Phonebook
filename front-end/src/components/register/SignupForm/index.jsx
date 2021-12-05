@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from '../../../schemas/signupValidation';
 import SecondPage from '../secondPage';
+
+import defaultPicture from '../../../images/dataUri/patternPicture';
 
 import Input from '../../inputs/Input';
 import CheckBox from '../../inputs/CheckBox';
@@ -19,16 +21,23 @@ const SignupForm = () => {
     const pageNumber = useRef(0);
     const name = useRef('Usuário');
 
-    const { register, handleSubmit, reset,
+    const { register, handleSubmit, setValue, reset,
         formState: { errors: {
-            completeName,
+            email,
             username,
-            email, 
             password,
+            completeName,
+            profilePicture,
+            termsOfService,
             confirmPassword,
-            termsOfService
         }
-    }} = useForm({ resolver: yupResolver(schema) });
+    }} = useForm({ 
+        resolver: yupResolver(schema),
+        reValidateMode: 'onChange',
+        defaultValues: {
+            profilePicture: defaultPicture
+        }
+    });
 
     const fields = [
         {
@@ -64,13 +73,16 @@ const SignupForm = () => {
     ]
 
     const signUp = ( user ) => {
-        reset();
-
         name.current = user.completeName.split(" ", 1);
-
-        pageNumber.current === 0
-            ? pageNumber.current = 1
-            : pageNumber.current = 0
+    
+        if(pageNumber.current === 0) {
+            pageNumber.current = 1;
+            setValue('profilePicture', ' ');
+        }
+        else {
+            pageNumber.current = 0;
+            reset();
+        }
     }
 
     return (
@@ -113,7 +125,11 @@ const SignupForm = () => {
                         </>
                     )
                     : (
-                        <SecondPage name={name.current} />
+                        <SecondPage
+                            name={name.current}
+                            errors={profilePicture}
+                            setValue={setValue}
+                        />
                     )
             }
         </SignupFormContainer>
