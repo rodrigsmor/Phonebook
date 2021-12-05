@@ -1,11 +1,11 @@
 import styled from 'styled-components';
+import { ButtonWrapper } from '../SignupForm/styled';
 import { ButtonSubmit } from '../RegisterForm/styled';
-
 
 export const SecondPageContainer = styled.div`
     display: grid;
-    grid-row: 1/6;
-    grid-column: 1/3;
+    grid-row: 1/2;
+    grid-column: 1/2;
     grid-template-columns: 1fr;
     animation: animation .5s ease;
     grid-template-rows: max-content auto max-content;
@@ -59,12 +59,12 @@ export const ElementDivisors = styled.div`
             border-radius: 50%;
         }
     }
+`;
 
-    &:nth-of-type(3) {
-        grid-row: 3/4;
-        padding: 1rem 0;
-
-    }
+export const ElementDivisorsButtons = styled(ButtonWrapper)`
+    grid-row: 3/4;
+    padding: 1rem 0;
+    flex-direction: row;
 `;
 
 export const CheckBoxContainer = styled.div`

@@ -3,6 +3,7 @@ import {
     ElementDivisors,
     CheckBoxContainer,
     SecondPageContainer,
+    ElementDivisorsButtons,
 } from './styled';
 
 import Upload from '../../inputs/Upload';
@@ -10,7 +11,7 @@ import { useState, useEffect } from 'react';
 
 import defaultPicture from '../../../images/dataUri/patternPicture';
 
-const SecondPage = ({ name, errors, setValue }) => {
+const SecondPage = ({ name, errors, setValue, setPageNumber, className, setUserPicture }) => {
     const [ checked, setChecked ] = useState('');
 
     useEffect(() => {
@@ -20,14 +21,14 @@ const SecondPage = ({ name, errors, setValue }) => {
     }, [checked, name, setValue]);
 
     return (
-        <SecondPageContainer>
+        <SecondPageContainer className={className}>
             <ElementDivisors>
                 <h4>Bem-vindo, {name}</h4>
                 <h5>Selecione uma imagem para seu perfil</h5>
             </ElementDivisors>
 
             <ElementDivisors>
-                <Upload name={'profilePicture'} setValue={setValue} />
+                <Upload name={'profilePicture'} setValue={setValue} setPicture={setUserPicture}/>
                 <p className={'errors'}> { errors?.message } </p>
 
                 <CheckBoxContainer className={checked}>
@@ -47,12 +48,23 @@ const SecondPage = ({ name, errors, setValue }) => {
                 </CheckBoxContainer>
             </ElementDivisors>
 
-            <ElementDivisors>
+            <ElementDivisorsButtons>
+                <button 
+                    className={'cta-left'}
+                    onClick={(e) => {
+                        e.preventDefault();
+
+                        setPageNumber(0);
+                    }}
+                >
+                    retornar
+                </button>
+
                 <SubmitButton
                     type={'submit'}
                     value={'finalizar cadastro'}
                 />
-            </ElementDivisors>
+            </ElementDivisorsButtons>
         </SecondPageContainer>
     );
 }
