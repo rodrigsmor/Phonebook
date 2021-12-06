@@ -77,6 +77,8 @@ const SignupForm = () => {
         else {
             setPageNumber(0);
             reset();
+            setUserPicture(defaultPicture);
+            window.location.replace('/');
         }
     }
 
@@ -107,8 +109,9 @@ const SignupForm = () => {
             
             <SecondPage
                 name={name.current}
-                errors={profilePicture}
                 setValue={setValue}
+                errors={profilePicture}
+                userPicture={userPicture}
                 setPageNumber={setPageNumber}
                 className={pageNumber === 1
                     ? ''

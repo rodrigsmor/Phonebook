@@ -4,8 +4,8 @@ import {
     ContactFormContainer
 } from './styled';
 
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useState, useEffect } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from '../../../../../schemas/contactValidation'
 
@@ -14,20 +14,29 @@ import Upload from '../../../../inputs/Upload';
 import Select from '../../../../inputs/Select';
 import { useAuth } from '../../../../../providers/auth'
 import MaskedInput from '../../../../inputs/MaskedInput';
+import defaultPicture from '../../../../../images/dataUri/patternPicture';
 
 const ContactForm = () => {
     const { setDisplayModal } = useAuth();
     const [ selectValue, setSelectValue ] = useState('');
+    const [ userPicture, setUserPicture ] = useState(defaultPicture);
 
     const { 
         register,
-        handleSubmit, 
+        handleSubmit,
         setValue,
-        reset, 
+        reset,
         formState: { errors } 
     } = useForm({
         resolver: yupResolver(schema),
+        defaultValues: {
+            contactPicture: defaultPicture,   
+        }
     });
+
+    useEffect(() => {
+        setValue('contactPicture', userPicture);
+    }, [setValue, userPicture]);
 
     const newContact = ( contact ) => {
         // fazer resetar somente quando a resposta da criação do usuario for ok
@@ -43,6 +52,7 @@ const ContactForm = () => {
         });
         setSelectValue('');
         setDisplayModal('');
+        setUserPicture(defaultPicture);
     }
 
     return (
@@ -51,7 +61,12 @@ const ContactForm = () => {
             <h5>Preencha com as informações do contato</h5>
             
             <FormWrapper onSubmit={handleSubmit(newContact)}>
-                <Upload name={'contactImage'} />
+                <Upload 
+                    setValue={setValue}
+                    name={'contactPicture'}
+                    picture={userPicture}
+                    setPicture={setUserPicture}
+                />
                 <span className={'field-2'}>
                     <Input
                         type={'text'}

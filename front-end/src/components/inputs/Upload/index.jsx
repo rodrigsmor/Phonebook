@@ -7,7 +7,9 @@ import { BiCamera } from 'react-icons/bi';
 import UserSvg from '../../../images/UserSvg';
 import { useEffect, useState } from 'react';
 
-const Upload = ({ name, setValue, setPicture }) => {
+import defaultPicture from '../../../images/dataUri/patternPicture';
+
+const Upload = ({ name, setValue, picture, setPicture }) => {
     const [ image, setImage ] = useState(null);
     const [ preview, setPreview ] = useState(null);
 
@@ -18,16 +20,20 @@ const Upload = ({ name, setValue, setPicture }) => {
             reader.onloadend = () => {
                 setPreview(reader.result);
                 setPicture(reader.result);
-                setValue(name, reader.result);
             }
 
             reader.readAsDataURL(image);
         } else {
             setPreview(null);
             setPicture(' ');
-            setValue(name, ' ');
         }
     }, [image, name, setPicture, setValue]);
+
+    useEffect(() => {
+        if( picture === defaultPicture) {
+            setPreview(null);
+        }
+    }, [picture, preview]);
 
     return (
         <UploadContainer

@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 
 import defaultPicture from '../../../images/dataUri/patternPicture';
 
-const SecondPage = ({ name, errors, setValue, setPageNumber, className, setUserPicture }) => {
+const SecondPage = ({ name, errors, setValue, setPageNumber, className, setUserPicture, userPicture }) => {
     const [ checked, setChecked ] = useState('');
 
     useEffect(() => {
@@ -28,7 +28,12 @@ const SecondPage = ({ name, errors, setValue, setPageNumber, className, setUserP
             </ElementDivisors>
 
             <ElementDivisors>
-                <Upload name={'profilePicture'} setValue={setValue} setPicture={setUserPicture}/>
+                <Upload
+                    setValue={setValue} 
+                    picture={userPicture} 
+                    name={'profilePicture'} 
+                    setPicture={setUserPicture}
+                />
                 <p className={'errors'}> { errors?.message } </p>
 
                 <CheckBoxContainer className={checked}>
