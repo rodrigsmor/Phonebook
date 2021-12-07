@@ -7,18 +7,18 @@ import {
 } from './styled';
 
 import Upload from '../../../inputs/Upload';
-import { useState, useEffect } from 'react';
 
-import defaultPicture from '../../../../images/dataUri/patternPicture';
-
-const SecondPage = ({ name, errors, setValue, setPageNumber, className, setUserPicture, userPicture }) => {
-    const [ checked, setChecked ] = useState('');
-
-    useEffect(() => {
-        checked === 'checked'
-            ? setValue('profilePicture', defaultPicture)
-            : setValue('profilePicture', ' ');
-    }, [checked, name, setValue]);
+const SecondPage = ({ 
+    name, 
+    errors, 
+    setValue, 
+    setPageNumber, 
+    className, 
+    setUserPicture, 
+    userPicture,
+    checked,
+    setChecked
+}) => {
 
     return (
         <SecondPageContainer className={className}>

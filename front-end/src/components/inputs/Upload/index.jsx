@@ -54,7 +54,7 @@ const Upload = ({ name, setValue, picture, setPicture }) => {
                         setImage(file);
                     } else {
                         setImage(null);
-                        setValue(name, null);
+                        setValue(name, ' ');
                     }
                 }}
             />

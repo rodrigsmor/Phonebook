@@ -15,6 +15,7 @@ import {
 const SignupForm = () => {
     const [ pageNumber, setPageNumber ] = useState(0);
     const [ userPicture, setUserPicture ] = useState(defaultPicture);
+    const [checked, setChecked] = useState('');
     const name = useRef('Usuário');
 
     const { register, handleSubmit, setValue, reset,
@@ -87,16 +88,22 @@ const SignupForm = () => {
     }
 
     useEffect(() => {
-        if( userPicture !== defaultPicture && userPicture !== ' ') {
+        if(userPicture !== defaultPicture && userPicture !== ' ') {
             setValue('profilePicture', userPicture);
-        }
-        else if(pageNumber === 1 && userPicture === defaultPicture) {
-            setValue('profilePicture', ' ');
-        } else {
+        } else if(pageNumber === 1) {
+            if(checked === 'checked') {
+                setUserPicture(defaultPicture);
+                setValue('profilePicture', userPicture)
+            } else {
+                setUserPicture(' ');
+                setValue('profilePicture', userPicture)
+            }
+        } else if(userPicture !== ' ') {
             setValue('profilePicture', defaultPicture);
         }
-    }, [pageNumber, setValue, userPicture]);
-    
+        
+        alert('valor = ' + userPicture);
+    }, [pageNumber, setValue, checked, userPicture]);
 
     return (
         <SignupFormContainer onSubmit={handleSubmit(signUp)}>
@@ -112,8 +119,10 @@ const SignupForm = () => {
             />
             
             <SecondPage
+                checked={checked}
                 name={name.current}
                 setValue={setValue}
+                setChecked={setChecked}
                 errors={profilePicture}
                 userPicture={userPicture}
                 setPageNumber={setPageNumber}
