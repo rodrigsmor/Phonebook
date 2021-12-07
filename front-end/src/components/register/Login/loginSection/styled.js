@@ -1,11 +1,26 @@
 import styled from 'styled-components';
-import { FormWrapper, ButtonSubmit } from '../RegisterForm/styled';
+import { ButtonSubmit } from '../../RegisterForm/styled';
 
-export const LoginFormContainer = styled(FormWrapper)`
+export const LoginContainer = styled.div`
+    width: 100%;
+    display: grid;
+    height: 19.5rem;
     grid-gap: 1.5rem;
-    height: fit-content;
+    background: transparent;
+    animation: animationLogin .5s ease;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: fit-content repeat(4, 1fr);
+        
+    @keyframes animationLogin {
+        from {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 `;
 
 export const FormFields = styled.div`

@@ -1,6 +1,6 @@
-import Input from '../../inputs/Input';
 import { Link } from 'react-router-dom';
-import CheckBox from '../../inputs/CheckBox';
+import Input from '../../../inputs/Input';
+import CheckBox from '../../../inputs/CheckBox';
 
 import {
     FormFields,

@@ -2,8 +2,8 @@ import {
     RegisterSection,
 } from './styled';
 
-import LoginForm from '../LoginForm';
-import SignupForm from '../SignupForm';
+import LoginForm from '../Login/LoginForm';
+import SignupForm from '../Signup/SignupForm';
 
 const RegisterForm = ({ type, text }) => {
     return (

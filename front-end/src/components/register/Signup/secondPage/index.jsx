@@ -6,10 +6,10 @@ import {
     ElementDivisorsButtons,
 } from './styled';
 
-import Upload from '../../inputs/Upload';
+import Upload from '../../../inputs/Upload';
 import { useState, useEffect } from 'react';
 
-import defaultPicture from '../../../images/dataUri/patternPicture';
+import defaultPicture from '../../../../images/dataUri/patternPicture';
 
 const SecondPage = ({ name, errors, setValue, setPageNumber, className, setUserPicture, userPicture }) => {
     const [ checked, setChecked ] = useState('');

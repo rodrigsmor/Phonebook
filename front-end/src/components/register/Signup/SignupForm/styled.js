@@ -1,10 +1,8 @@
 import styled from 'styled-components';
-import { FormWrapper } from '../RegisterForm/styled';
+import { FormWrapper } from '../../RegisterForm/styled';
 
 export const SignupFormContainer = styled(FormWrapper)`
-    background: transparent;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+    
 `;
 
 export const ButtonWrapper = styled.div`

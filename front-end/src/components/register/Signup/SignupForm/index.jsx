@@ -1,11 +1,11 @@
 import { useForm } from 'react-hook-form';
 import { useRef, useState, useEffect } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
-import schema from '../../../schemas/signupValidation';
+import schema from '../../../../schemas/signupValidation';
 import FirstPage from '../firstPage';
 import SecondPage from '../secondPage';
 
-import defaultPicture from '../../../images/dataUri/patternPicture';
+import defaultPicture from '../../../../images/dataUri/patternPicture';
 
 import {
     SignupFormContainer,
@@ -78,7 +78,7 @@ const SignupForm = () => {
             setPageNumber(0);
             reset();
             setUserPicture(defaultPicture);
-            window.location.replace('/');
+            window.location.href = '/';
         }
     }
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ButtonWrapper } from '../SignupForm/styled';
-import { ButtonSubmit } from '../RegisterForm/styled';
+import { ButtonSubmit } from '../../RegisterForm/styled';
 
 export const FirstPageContainer = styled.div`
     display: grid;

@@ -3,47 +3,25 @@ import {
     ButtonsBox,
     LoginButton,
     CheckBoxCard,
-    LoginFormContainer,
+    LoginContainer,
 } from './styled';
-
-import { useState, useRef, useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import emailschema from '../../../schemas/login/emailValidation';
-import usernameschema from '../../../schemas/login/usernameValidation';
 
 import { HiOutlineMail } from 'react-icons/hi';
 import { AiOutlineUser } from 'react-icons/ai';
 
-import Input from '../../inputs/Input';
+import Input from '../../../inputs/Input';
 
-const LoginForm = () => {
-    const currentSchema = useRef(emailschema);
-    const [ checked, setChecked ] = useState('e-mail');
-
-    useEffect(() => {
-        checked === 'e-mail' 
-            ? currentSchema.current = emailschema
-            : currentSchema.current = usernameschema;
-    }, [ checked ]);
-
-    const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors }
-    } = useForm({
-        resolver: yupResolver(currentSchema.current),
-    });
-
-    const login = (user) => {
-        reset();
-    }
-
+const LoginSection = ({
+    errors,
+    checked,
+    register,
+    className,
+    setChecked,
+}) => {
     return (
-        <LoginFormContainer onSubmit={handleSubmit(login)}>
+        <LoginContainer className={className}>
             <ButtonsBox>
-                <CheckBoxCard className={ checked === 'e-mail' ? 'checked' : '' }>
+                <CheckBoxCard className={checked === 'e-mail' ? 'checked' : ''}>
                     <HiOutlineMail />
                     <input type={'checkbox'} id={'e-mail'} name={'e-mail'}
                         onClick={() => {
@@ -53,7 +31,7 @@ const LoginForm = () => {
                     <label htmlFor={'e-mail'}>e-mail</label>
                 </CheckBoxCard>
 
-                <CheckBoxCard className={ checked === 'username' ? 'checked' : '' }>
+                <CheckBoxCard className={checked === 'username' ? 'checked' : ''}>
                     <AiOutlineUser />
                     <input type={'checkbox'} id={'username'} name={'username'}
                         onClick={() => {
@@ -65,7 +43,7 @@ const LoginForm = () => {
             </ButtonsBox>
 
             {
-                checked === 'e-mail' 
+                checked === 'e-mail'
                     ? (
                         <FormFields>
                             <Input
@@ -101,7 +79,7 @@ const LoginForm = () => {
             </FormFields>
 
             <FormFields>
-                <a href={'/#'}>
+                <a href={'/users/login/#'}>
                     Esqueceu sua senha?
                 </a>
             </FormFields>
@@ -110,8 +88,8 @@ const LoginForm = () => {
                 type={'submit'}
                 value={'fazer login'}
             />
-        </ LoginFormContainer>
+        </LoginContainer>
     );
 }
 
-export default LoginForm;
+export default LoginSection;
