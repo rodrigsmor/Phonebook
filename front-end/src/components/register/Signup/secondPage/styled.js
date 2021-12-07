@@ -3,6 +3,7 @@ import { ButtonWrapper } from '../SignupForm/styled';
 import { ButtonSubmit } from '../../RegisterForm/styled';
 
 export const SecondPageContainer = styled.div`
+    height: 100%;
     display: grid;
     grid-row: 1/2;
     grid-column: 1/2;

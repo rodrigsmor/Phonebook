@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import schema from '../../../../schemas/signupValidation';
 import FirstPage from '../firstPage';
 import SecondPage from '../secondPage';
+import SuccessStep from '../successStep';
 
 import defaultPicture from '../../../../images/dataUri/patternPicture';
 
@@ -75,10 +76,13 @@ const SignupForm = () => {
             setValue('profilePicture', ' ');
         }
         else {
-            setPageNumber(0);
+            setPageNumber(2);
             reset();
             setUserPicture(defaultPicture);
-            window.location.href = '/';
+
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 3500);
         }
     }
 
@@ -118,6 +122,13 @@ const SignupForm = () => {
                     : 'notShow'
                 }
                 setUserPicture={setUserPicture}
+            />
+
+            <SuccessStep
+                className={pageNumber === 2
+                    ? ''
+                    : 'notShow'
+                }
             />
         </SignupFormContainer>
     );

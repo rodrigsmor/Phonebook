@@ -38,6 +38,10 @@ const LoginForm = () => {
         else {
             setSectionNumber(2);
             reset();
+
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 3500);
         }
     }
 
