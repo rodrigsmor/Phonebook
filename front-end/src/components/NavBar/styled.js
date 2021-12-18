@@ -8,6 +8,21 @@ export const NavBarContainer = styled.nav`
     flex-direction: column;
     justify-content: space-evenly;
     background: ${({ theme }) => theme.palette.background.contrast };
+
+    @media screen and (min-width: 768px) and (max-width: 1150px) {
+        .logo {
+            h2 {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .logo,
+        footer {
+            display: none;
+        }
+    }
 `;
 
 export const Options = styled.ul`
@@ -42,19 +57,37 @@ export const Options = styled.ul`
             }
         }
     }
+
+    @media screen and (min-width: 768px) and (max-width: 1150px) {
+        gap: 15px;
+        align-items: center;
+
+        li {
+            padding: 10px;
+            line-height: 40px;
+            width: fit-content;
+
+            &.selected {
+                width: fit-content;
+            }
+        }
+    }
 `;
 
 export const LinkTo = styled(Link)`
     gap: 8px;
     display: flex;
-    font-size: 15px;
     align-items: center;
     text-decoration: none;
-    color: ${({ theme }) => theme.palette.primary.light };
     
     svg, g {
         font-size: 18px;
         fill: ${({ theme }) => theme.palette.primary.light };
+    }
+    
+    p {
+        font-size: 15px;
+        color: ${({ theme }) => theme.palette.primary.light };
     }
 
     .selected & {
@@ -75,11 +108,27 @@ export const LinkTo = styled(Link)`
             background: ${({ theme }) => theme.palette.primary.light };
         }
     }
+
+    @media screen and (min-width: 768px) and (max-width: 1150px) {
+        svg, g {
+            font-size: 18pt;
+        }
+
+        p {
+            display: none;
+        }
+
+        .selected & {
+            svg, g {
+                font-size: 18pt;
+            }
+        }
+    }
 `;
 
 export const ContactButton = styled.button`
-    display: flex;
     gap: 10px;
+    display: flex;
     outline: none;
     cursor: pointer;
     padding: 10px 25px;
@@ -87,9 +136,13 @@ export const ContactButton = styled.button`
     border-radius: 15px;
     transition: .5s linear;
     border: transparent 0px solid;
-    color: ${({ theme }) => theme.palette.background.contrast };
     background: ${({ theme }) => theme.palette.primary.light };
     
+    p {
+        color: ${({ theme }) => theme.palette.background.contrast };
+
+    }
+
     svg, g {
         font-size: 20px;
         fill: ${({ theme }) => theme.palette.background.contrast };
@@ -99,6 +152,12 @@ export const ContactButton = styled.button`
         background: ${({ theme }) => theme.title === 'light'
                         ? theme.palette.primary.dark 
                         : theme.palette.primary.main };
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1150px) {
+        p {
+            display: none;
+        }
     }
 `;
 
@@ -124,6 +183,21 @@ export const UserAccount = styled.footer`
         grid-area: subtitle;
         color: ${({ theme }) => theme.palette.secondary.main };
     }
+
+    @media screen and (min-width: 768px) and (max-width: 1150px) {
+        padding: 0;
+        width: 3.5rem;
+        height: 3.5rem;
+        position: relative;
+        place-items: center;
+        background: transparent;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+
+        h6, h5 {
+            display: none;
+        }
+    }
 `;
 
 export const ProfileWrapper = styled.figure`
@@ -141,6 +215,12 @@ export const ProfileWrapper = styled.figure`
     img {
         width: 100%;
         height: 100%;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1150px) {
+        width: inherit;
+        height: inherit;
+        margin: 0px;
     }
 `;
 
@@ -164,5 +244,25 @@ export const MoreInformations = styled.button`
 
     :hover {
         background: ${({ theme }) => theme.palette.opacity.main[80] };
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1150px) {
+        margin: 0px;
+        grid-row: 1/2;
+        width: inherit;
+        height: inherit;
+        grid-column: 1/2;
+        position: absolute;
+        border-radius: 50%;
+        background: transparent;
+
+        :hover {
+            opacity: 0.2;
+            background: ${({ theme }) => theme.palette.primary.dark };
+        }
+
+        svg {
+            display: none;
+        }
     }
 `;

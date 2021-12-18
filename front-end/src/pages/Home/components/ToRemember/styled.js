@@ -2,15 +2,24 @@ import styled from 'styled-components';
 
 export const ToRememberContainer = styled.section`
     display: grid;
+    overflow: hidden;
     grid-column: 3/5;
-    grid-column-gap: 20px;
-    grid-template-rows: 1.17em 3fr;
+    grid-template-rows: 1.17em 125px;
     grid-template-columns: repeat(5, 1fr);
-
+    
     h3 {
         display: flex;
+        grid-row: 1/2;
         grid-column: 1/6;
         align-items: center;
+    }
+    
+    @media screen and (max-width: 1190px) {
+        grid-template-columns: repeat(4, 1fr);
+
+        div:nth-of-type(5) {
+            display: none;
+        }
     }
 `;
 

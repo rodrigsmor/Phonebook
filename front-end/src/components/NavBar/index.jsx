@@ -79,7 +79,7 @@ const NavBar = ({ page }) => {
                                 >
                                     <LinkTo to={option.destination}>
                                         {option.optionIcon}
-                                        {option.textContent}
+                                        <p>{option.textContent}</p>
                                     </LinkTo>
                                 </li>
                             )
@@ -90,7 +90,8 @@ const NavBar = ({ page }) => {
                                             setDisplayModal('display');
                                         }}
                                     >
-                                        <RiAddLine /> Novo contato
+                                        <RiAddLine /> 
+                                        <p>Novo contato</p>
                                     </ContactButton>
                                 </li>
                             )

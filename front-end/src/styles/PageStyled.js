@@ -8,11 +8,15 @@ export const PageComponent = styled.div`
     grid-template-columns: 14rem 1fr;
     grid-template-rows: 1fr 1fr 2fr;
     grid-template-areas: 
-        'navbar header'
-        'navbar main'
-        'navbar main'
+    'navbar header'
+    'navbar main'
+    'navbar main'
     ;
     background: ${({ theme }) => theme.palette.background.main };
+    
+    @media screen and (min-width: 768px) and (max-width: 1150px) {
+        grid-template-columns: 6rem 1fr;
+    }
 `;
 
 export const Main = styled.main`
