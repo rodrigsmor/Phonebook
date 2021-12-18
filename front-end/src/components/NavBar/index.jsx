@@ -25,39 +25,77 @@ import { useAuth } from '../../providers/auth';
 const NavBar = ({ page }) => {
     const { setDisplayModal } = useAuth();
 
+    const options = [
+        {
+            pageTitle: 'home',
+            textContent: 'Página Inicial',
+            destination: '/home',
+            optionIcon: <VscHome />,
+        },
+        {
+            pageTitle: 'myContacts',
+            textContent: 'Meus Contatos',
+            destination: '/user/contacts',
+            optionIcon: <BsTelephone />
+        },
+        {
+            pageTitle: '',
+            textContent: '',
+            destination: '',
+            optionIcon: ''
+        },
+        {
+            pageTitle: 'myProfile',
+            textContent: 'Meu Perfil',
+            destination: '/user/profile',
+            optionIcon: <BsPerson />
+        },
+        {
+            pageTitle: 'configs',
+            textContent: 'Configurações',
+            destination: '/user/configs',
+            optionIcon: <BsGear />
+        },
+    ]
+
+    const pageSelected = (title) => {
+        if(page === title)
+            return 'selected';
+        else 
+            return '';
+    }
+
     return (
         <NavBarContainer>
             <Logo />
             <Options>
-                <li className={ page === 'home' ? 'selected' : '' }>
-                    <LinkTo to={'#'}> 
-                        <VscHome /> Página Inicial
-                    </LinkTo>
-                </li>
-                <li className={ page === 'myContacts' ? 'selected' : '' }>
-                    <LinkTo to={'#'}>
-                        <BsTelephone /> Meus Contatos
-                    </LinkTo>
-                </li>
-                <li>
-                    <ContactButton
-                        onClick={() => {
-                            setDisplayModal('display');
-                        }}
-                    >
-                        <RiAddLine /> Novo contato
-                    </ContactButton>
-                </li>
-                <li className={ page === 'myProfile' ? 'selected' : '' }>
-                    <LinkTo to={'#'}>
-                        <BsPerson /> Meu Perfil
-                    </LinkTo>
-                </li>
-                <li className={ page === 'configs' ? 'selected' : '' }>
-                    <LinkTo to={'#'}>
-                        <BsGear /> Configurações
-                    </LinkTo>
-                </li>
+                {
+                    options.map((option, id) => (
+                        id !== 2 
+                            ? (                
+                                <li
+                                    key={id}
+                                    className={ pageSelected(option.pageTitle) }
+                                >
+                                    <LinkTo to={option.destination}>
+                                        {option.optionIcon}
+                                        {option.textContent}
+                                    </LinkTo>
+                                </li>
+                            )
+                            : (                
+                                <li key={id}>
+                                    <ContactButton
+                                        onClick={() => {
+                                            setDisplayModal('display');
+                                        }}
+                                    >
+                                        <RiAddLine /> Novo contato
+                                    </ContactButton>
+                                </li>
+                            )
+                    ))
+                }
             </Options>
 
             <UserAccount>

@@ -4,6 +4,7 @@ import {
 
 import { useForm } from 'react-hook-form';
 import LoginSection from '../loginSection';
+import { useHistory } from 'react-router-dom';
 import ConfirmSection from '../confirmSection';
 import SuccessSection from '../successSection';
 import { useState, useRef, useEffect } from 'react';
@@ -15,6 +16,7 @@ const LoginForm = () => {
     const currentSchema = useRef(emailschema);
     const [ checked, setChecked ] = useState('e-mail');
     const [ sectionNumber, setSectionNumber ] = useState(0);
+    let navigate = useHistory();
 
     useEffect(() => {
         checked === 'e-mail' 
@@ -40,7 +42,7 @@ const LoginForm = () => {
             reset();
 
             setTimeout(() => {
-                window.location.href = '/';
+                navigate.push('/home');
             }, 3500);
         }
     }

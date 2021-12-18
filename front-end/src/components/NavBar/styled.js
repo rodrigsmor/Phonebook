@@ -96,7 +96,9 @@ export const ContactButton = styled.button`
     }
     
     :hover {
-        background: ${({ theme }) => theme.palette.secondary.main };
+        background: ${({ theme }) => theme.title === 'light'
+                        ? theme.palette.primary.dark 
+                        : theme.palette.primary.main };
     }
 `;
 

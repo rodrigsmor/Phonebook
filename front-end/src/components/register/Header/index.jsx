@@ -8,24 +8,24 @@ import Logo from '../../Logo';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 
 const Header = ({ where }) => {
-    
+
     var login, signup;
 
     switch (where) {
-        case 'login': 
+        case 'login':
             login = 'notShow';
             signup = '';
-        break;
+            break;
 
-        case 'signup': 
+        case 'signup':
             login = '';
             signup = 'notShow';
-        break;
+            break;
 
         default:
             login = '';
             signup = '';
-        break;
+            break;
     }
 
     return (
@@ -35,14 +35,14 @@ const Header = ({ where }) => {
             <ButtonSpan>
                 <LoginButton
                     className={signup}
-                    to={'/user/signup'}
+                    to={'/signup'}
                 >
                     cadastrar
                 </LoginButton>
 
                 <LoginButton
                     className={login}
-                    to={'/user/login'}
+                    to={'/login'}
                 >
                     entrar
                 </LoginButton>

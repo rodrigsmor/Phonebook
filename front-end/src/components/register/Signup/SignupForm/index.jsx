@@ -1,10 +1,11 @@
-import { useForm } from 'react-hook-form';
-import { useRef, useState, useEffect } from 'react';
-import { yupResolver } from '@hookform/resolvers/yup';
-import schema from '../../../../schemas/signupValidation';
 import FirstPage from '../firstPage';
 import SecondPage from '../secondPage';
 import SuccessStep from '../successStep';
+import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
+import { useRef, useState, useEffect } from 'react';
+import { yupResolver } from '@hookform/resolvers/yup';
+import schema from '../../../../schemas/signupValidation';
 
 import defaultPicture from '../../../../images/dataUri/patternPicture';
 
@@ -17,6 +18,7 @@ const SignupForm = () => {
     const [ userPicture, setUserPicture ] = useState(defaultPicture);
     const [checked, setChecked] = useState('');
     const name = useRef('Usuário');
+    let navigate = useHistory();
 
     const { register, handleSubmit, setValue, reset,
         formState: { errors: {
@@ -78,11 +80,11 @@ const SignupForm = () => {
         }
         else {
             setPageNumber(2);
-            reset();
-            setUserPicture(defaultPicture);
-
+            
             setTimeout(() => {
-                window.location.href = '/';
+                navigate.push('/home');
+                setUserPicture(defaultPicture);
+                reset();
             }, 3500);
         }
     }
@@ -90,19 +92,17 @@ const SignupForm = () => {
     useEffect(() => {
         if(userPicture !== defaultPicture && userPicture !== ' ') {
             setValue('profilePicture', userPicture);
-        } else if(pageNumber === 1) {
-            if(checked === 'checked') {
-                setUserPicture(defaultPicture);
-                setValue('profilePicture', userPicture)
-            } else {
-                setUserPicture(' ');
-                setValue('profilePicture', userPicture)
-            }
-        } else if(userPicture !== ' ') {
+        } 
+        else if(pageNumber === 1) {
+            checked === 'checked'
+                ? setUserPicture(defaultPicture)
+                : setUserPicture(' ');
+
+            setValue('profilePicture', userPicture)
+        } 
+        else if(userPicture !== ' ' || pageNumber === 0) {
             setValue('profilePicture', defaultPicture);
-        }
-        
-        alert('valor = ' + userPicture);
+        }        
     }, [pageNumber, setValue, checked, userPicture]);
 
     return (

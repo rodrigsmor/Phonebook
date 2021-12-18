@@ -25,12 +25,16 @@ export const InputElement = styled.input`
         border: 2px solid ${({ theme }) => theme.palette.primary.main };
         
         ~ label {
+            z-index: 3;
             padding: 0 5px;
             font-size: 12px;
-            z-index: 3;
             margin: -5px 0 0 15px;
             background: ${({ theme }) => theme.palette.background.main };
         }
+    }
+
+    &::-ms-reveal {
+        opacity: 0;
     }
 `;
 

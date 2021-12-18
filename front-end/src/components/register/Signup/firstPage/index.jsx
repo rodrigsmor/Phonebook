@@ -38,7 +38,7 @@ const FirstPage = ({ fields, register, termsOfService, profilePicture, className
 
             <ButtonWrapperField>
                 <Link
-                    to={'/user/login'}
+                    to={'/login'}
                     className={'cta-left'}
                 >
                     fazer login

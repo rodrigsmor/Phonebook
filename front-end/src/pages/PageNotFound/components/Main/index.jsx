@@ -23,7 +23,7 @@ const Main = () => {
                 <h3>PÁGINA NÃO ENCONTRADA</h3>
                 <h5>A página que você está procurando não está disponível</h5>
             
-                <Redirect to={'/'}>
+                <Redirect to={'/home'}>
                     Ir para a Página Inicial
                     <FiChevronRight />
                 </Redirect>

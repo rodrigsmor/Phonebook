@@ -8,9 +8,9 @@ function Routes() {
     return (
         <BrowserRouter>        
             <Switch>
-                <Route path='/' exact component={Home} />
-                <Route path='/user/login' component={Login} />
-                <Route path='/user/signup' component={Signup} />
+                <Route path='/home' exact component={Home} />
+                <Route path='/login' component={Login} />
+                <Route path='/signup' component={Signup} />
                 <Route component={PageNotFound} />
             </Switch>
         </BrowserRouter>
