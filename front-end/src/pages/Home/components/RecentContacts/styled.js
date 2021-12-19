@@ -20,12 +20,46 @@ export const BoxContainer = styled.section`
 export const ContactsWrapper = styled.div`
     width: 100%;
     display: grid;
-    grid-gap: 26px;
+    height: 3.8rem;
     overflow: hidden;
     grid-column: 1/6;
-    height: 3.8rem;
-    padding: 0 5px;
-    grid-template-columns: repeat(8, 3.2rem);
+    grid-template-columns: repeat(8, 1fr);
+
+    .contactWrapper {
+        display: grid;
+        place-items: center;
+        background: transparent;
+    }
+
+    @media screen and (max-width: 1190px) {
+        grid-template-columns: repeat(7, 1fr);
+
+        .contactWrapper {
+            &:nth-of-type(8) {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1050px) {
+        grid-template-columns: repeat(6, 1fr);
+
+        .contactWrapper {
+            &:nth-of-type(7) {
+                display: none;
+            }
+        }
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 1050px) {
+        grid-template-columns: repeat(5, 1fr);
+    
+        .contactWrapper {
+            &:nth-of-type(6) {
+                display: none;
+            }
+        }
+    }
 `;
 
 export const ContactsMin = styled.figure`

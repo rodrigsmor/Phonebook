@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const StatisticsContainer = styled.aside`
-    grid-row: 2/5;
     display: flex;
+    grid-row: 2/5;
     margin: 0 0 20px 0;
     flex-direction: column;
     justify-content: space-between;
@@ -15,8 +15,9 @@ export const StatisticsContainer = styled.aside`
 `;
 
 export const StatisticsTable = styled.table`
-    display: table;
     width: 100%;
+    display: table;
+    height: max-content;
     border-spacing: 0 15px;
     border-collapse: separate;
 
@@ -40,8 +41,7 @@ export const CategoriesButton = styled.button`
     outline: none;
     cursor: pointer;
     font-size: 15px;
-    margin: 20px 0 0;
-    padding: 5px 20px;
+    padding: 5px 10px;
     border-radius: 10px;
     transition: .5s linear;
     border: 0px solid transparent;

@@ -10,11 +10,11 @@ export const YourContactsContainer = styled.section`
     border-radius: 15px 15px 0 0 !important;
 
     h3 {
+        width: 100%;
         display: flex;
         text-align: left;
         grid-column: 1/6;
         align-items: center;
-        width: 100%;
     }
 `;
 
@@ -59,8 +59,9 @@ export const ContactContainer = styled.div`
     }
 
     h4 {
-        width: 30%;
+        width: 35%;
         text-align: center;
+        white-space: nowrap;
     }
 
     h5 {
@@ -81,6 +82,26 @@ export const ContactContainer = styled.div`
         
         :hover {
             background: ${({ theme }) => theme.palette.primary.dark };
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1040px) {
+        h5 {
+            display: none;
+        }
+
+        h4 {
+            width: 45%;
+            overflow: hidden;
+            max-width: 45%;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 860px) {
+        button {
+            font-size: 13px;
+            font-weight: 500;
+            padding: 5px 10px;
         }
     }
 `;
