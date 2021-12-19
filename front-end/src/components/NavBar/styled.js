@@ -112,6 +112,7 @@ export const LinkTo = styled(Link)`
     @media screen and (min-width: 768px) and (max-width: 1150px) {
         svg, g {
             font-size: 18pt;
+            color: red;
         }
 
         p {
@@ -140,7 +141,6 @@ export const ContactButton = styled.button`
     
     p {
         color: ${({ theme }) => theme.palette.background.contrast };
-
     }
 
     svg, g {
@@ -221,6 +221,8 @@ export const ProfileWrapper = styled.figure`
         width: inherit;
         height: inherit;
         margin: 0px;
+        border: 3px solid
+                    ${({ theme }) => theme.palette.opacity.dark[40] };
     }
 `;
 

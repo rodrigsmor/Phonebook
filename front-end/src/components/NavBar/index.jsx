@@ -12,13 +12,17 @@ import {
     MoreInformations
 } from './styled'
 
-import { 
-    BsTelephone,
+import {
+    BsGear,
     BsPerson,
-    BsGear
+    BsGearFill,
+    BsTelephone,
+    BsPersonFill,
+    BsTelephoneFill,
 } from 'react-icons/bs';
 
 import Logo from '../Logo';
+import { HiHome } from 'react-icons/hi';
 import AddContact from '../modals/AddContact';
 import { useAuth } from '../../providers/auth';
 
@@ -30,31 +34,36 @@ const NavBar = ({ page }) => {
             pageTitle: 'home',
             textContent: 'Página Inicial',
             destination: '/home',
-            optionIcon: <VscHome />,
+            icon: <VscHome />,
+            iconSelected: <HiHome />,
         },
         {
             pageTitle: 'myContacts',
             textContent: 'Meus Contatos',
             destination: '/user/contacts',
-            optionIcon: <BsTelephone />
+            icon: <BsTelephone />,
+            iconSelected: <BsTelephoneFill />
         },
         {
             pageTitle: '',
             textContent: '',
             destination: '',
-            optionIcon: ''
+            icon: '',
+            iconSelected: ''
         },
         {
             pageTitle: 'myProfile',
             textContent: 'Meu Perfil',
             destination: '/user/profile',
-            optionIcon: <BsPerson />
+            icon: <BsPerson />,
+            iconSelected: <BsPersonFill />,
         },
         {
             pageTitle: 'configs',
             textContent: 'Configurações',
             destination: '/user/configs',
-            optionIcon: <BsGear />
+            icon: <BsGear />,
+            iconSelected: <BsGearFill />,
         },
     ]
 
@@ -78,7 +87,15 @@ const NavBar = ({ page }) => {
                                     className={ pageSelected(option.pageTitle) }
                                 >
                                     <LinkTo to={option.destination}>
-                                        {option.optionIcon}
+                                        {
+                                            page === option.pageTitle
+                                                ? (
+                                                    option.iconSelected
+                                                )
+                                                : (
+                                                    option.icon
+                                                )
+                                        }
                                         <p>{option.textContent}</p>
                                     </LinkTo>
                                 </li>

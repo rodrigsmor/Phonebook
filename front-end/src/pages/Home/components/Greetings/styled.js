@@ -1,20 +1,28 @@
 import styled from 'styled-components';
 
 export const GreetingsBox = styled.section`
-    grid-gap: 10px;
     display: grid;
+    grid-gap: 10px;
     grid-column: 1/3;
     grid-template-columns: 2fr 1fr;
     
     article {
         display: flex;
+        overflow: hidden;
         grid-column: 1/2;
+        max-width: initial;
         max-height: inherit;
         flex-direction: column;
         justify-content: center;
         
         h3 {
+            width: 100%;
+            height: 25pt;
+            max-width: 100%;
             font-size: 18pt;
+            max-height: 25pt;
+            overflow: hidden;
+            white-space: nowrap;
         }
         
         p {
@@ -38,7 +46,6 @@ export const GreetingsBox = styled.section`
             transform: scale(1.5);
         }
     }
-    
 
     button {
         outline: none;
@@ -55,6 +62,14 @@ export const GreetingsBox = styled.section`
         
         :hover {
             background: ${({ theme }) => theme.palette.primary.dark };
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 865px) {
+        grid-template-columns: 1fr;
+
+        div {
+            display: none;
         }
     }
 `;

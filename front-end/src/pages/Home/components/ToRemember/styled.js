@@ -21,6 +21,14 @@ export const ToRememberContainer = styled.section`
             display: none;
         }
     }
+    
+    @media screen and (min-width: 768px) and (max-width: 905px) {
+        grid-template-columns: repeat(3, 1fr);
+    
+        div:nth-of-type(4) {
+            display: none;
+        }
+    }
 `;
 
 export const ContactMin = styled.div`
