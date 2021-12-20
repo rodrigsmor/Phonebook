@@ -34,7 +34,7 @@ export const HeaderContainer = styled.header`
         background: ${({ theme }) => theme.palette.primary.main };
 
         .components {
-            gap: 2rem;
+            gap: 1.5rem;
             height: 3rem;
             
             .searchBar,
@@ -49,6 +49,10 @@ export const PageTitle = styled.h1`
     font-weight: 800;
     color: ${({ theme }) => theme.palette.primary.dark };
     
+    @media screen and (min-width: 769px) and (max-width: 830px) {
+        font-size: 21pt;
+    }
+
     @media screen and (max-width: 768px) {
         color: ${({ theme }) => theme.palette.background.contrast };
     }

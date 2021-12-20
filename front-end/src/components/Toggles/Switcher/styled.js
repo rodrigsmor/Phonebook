@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 export const SwitchWrapper = styled.div`
     display: flex;
-    width: 2.5rem;
-    height: 1.5rem;
     padding: 0 2px;
     position: relative;
     align-items: center;
@@ -11,45 +9,83 @@ export const SwitchWrapper = styled.div`
     background: ${({ theme }) => theme.palette.background.contrast };
     
     button {
-        left: 0;
         border: none;
-        width: 1.2rem;
-        height: 1.2rem;
         cursor: pointer;
-        border-radius: 50%;
-        background: greenyellow;
         transition: .5s ease-out;
         background: ${({ theme }) => theme.palette.background.main };
-        box-shadow: 0px 0px 1px 1px
-            ${({ theme }) => theme.title === 'light'
-                ? theme.palette.opacity.dark[20]
-                : 'transparent'
-            }
-        ;
-
-
+        
         svg {
             font-size: 10px;
         }
-
-        &.dark {
-            margin-left: 0;
-
+        
+        &.dark {            
             svg {
                 fill: #bcd8e5;
             }
         }
         
-        &.light {
-            margin-left: 50%;
-            
+        &.light {            
             svg {
-                fill: #efcd41;
+                fill: #e6b909;
+            }
+        }
+    }
+    
+    span.clicked {
+        right: 0;
+    }
+    
+    @media screen and (min-width: 769px) {
+        width: 2.5rem;
+        height: 1.5rem;
+        
+        button {
+            left: 0;
+            width: 1.2rem;
+            height: 1.2rem;
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0px 0px 1px 1px
+                ${({ theme }) => theme.title === 'light'
+                    ? theme.palette.opacity.dark[20]
+                    : 'transparent'
+                }
+            ;
+            
+            &.dark {
+                left: 3px;
+            }
+            
+            &.light {
+                left: calc((100% / 2) - 3px);
             }
         }
     }
 
-    span.clicked {
-        right: 0;
+    @media screen and (max-width: 768px) {
+        width: fit-content;
+        height: fit-content;
+        padding: 0px;
+        background: transparent;
+
+        button {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 15px;
+            background: transparent;
+        
+            svg {
+                font-size: 20pt;
+
+            }
+
+            &.dark,
+            &.light {
+                
+                svg {
+                    fill: ${({ theme }) => theme.palette.background.main };
+                }
+            }
+        }
     }
 `;
