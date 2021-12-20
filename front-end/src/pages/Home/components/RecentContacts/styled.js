@@ -51,7 +51,7 @@ export const ContactsWrapper = styled.div`
         }
     }
     
-    @media screen and (min-width: 768px) and (max-width: 1050px) {
+    @media screen and (min-width: 769px) and (max-width: 1050px) {
         grid-template-columns: repeat(5, 1fr);
     
         .contactWrapper {

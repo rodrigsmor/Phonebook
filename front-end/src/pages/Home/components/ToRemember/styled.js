@@ -22,7 +22,7 @@ export const ToRememberContainer = styled.section`
         }
     }
     
-    @media screen and (min-width: 768px) and (max-width: 905px) {
+    @media screen and (min-width: 769px) and (max-width: 905px) {
         grid-template-columns: repeat(3, 1fr);
     
         div:nth-of-type(4) {

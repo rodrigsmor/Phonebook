@@ -20,6 +20,13 @@ export const SwitchWrapper = styled.div`
         background: greenyellow;
         transition: .5s ease-out;
         background: ${({ theme }) => theme.palette.background.main };
+        box-shadow: 0px 0px 1px 1px
+            ${({ theme }) => theme.title === 'light'
+                ? theme.palette.opacity.dark[20]
+                : 'transparent'
+            }
+        ;
+
 
         svg {
             font-size: 10px;

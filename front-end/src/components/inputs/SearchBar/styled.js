@@ -13,8 +13,10 @@ export const SearchBox = styled.form`
 `;
 
 export const InputBox = styled.input`
+    grid-column: 1/2;
     border: none;
     outline: none;
+    overflow: hidden;
     background: transparent;
     color: ${({ theme }) => theme.palette.primary.dark };
     
@@ -28,6 +30,7 @@ export const InputBox = styled.input`
 `;
 
 export const SearchButton = styled.button`
+    grid-column: 2/3;
     border: none;
     display: grid;
     width: 2.5rem;

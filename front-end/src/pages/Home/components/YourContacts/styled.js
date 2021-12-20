@@ -73,6 +73,7 @@ export const ContactContainer = styled.div`
         outline: none;
         cursor: pointer;
         font-size: 15px;
+        font-weight: 500;
         padding: 5px 20px;
         border-radius: 10px;
         transition: .5s linear;
@@ -85,7 +86,7 @@ export const ContactContainer = styled.div`
         }
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1040px) {
+    @media screen and (min-width: 769px) and (max-width: 1040px) {
         h5 {
             display: none;
         }
@@ -97,10 +98,9 @@ export const ContactContainer = styled.div`
         }
     }
 
-    @media screen and (min-width: 768px) and (max-width: 860px) {
+    @media screen and (min-width: 769px) and (max-width: 860px) {
         button {
             font-size: 13px;
-            font-weight: 500;
             padding: 5px 10px;
         }
     }

@@ -8,7 +8,7 @@ import { FiSearch } from 'react-icons/fi';
 
 const SearchBar = () => {
     return (
-        <SearchBox>
+        <SearchBox className={'searchBar'}>
             <InputBox 
                 type="search"
                 aria-label="buscar um contato"

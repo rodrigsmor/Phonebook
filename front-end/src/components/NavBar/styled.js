@@ -9,7 +9,7 @@ export const NavBarContainer = styled.nav`
     justify-content: space-evenly;
     background: ${({ theme }) => theme.palette.background.contrast };
 
-    @media screen and (min-width: 768px) and (max-width: 1150px) {
+    @media screen and (min-width: 769px) and (max-width: 1150px) {
         .logo {
             h2 {
                 display: none;
@@ -17,7 +17,22 @@ export const NavBarContainer = styled.nav`
         }
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 768px) {
+        left: 0;
+        bottom: 0;
+        z-index: 9;
+        width: calc(100% - 15px);
+        height: 5rem;
+        position: fixed;
+        flex-direction: row;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0px -1px 16px 2px 
+            ${({ theme }) => theme === 'light'
+                ? theme.palette.opacity.dark[40]
+                : theme.palette.opacity.dark[10] 
+            }
+        ; 
+
         .logo,
         footer {
             display: none;
@@ -32,21 +47,22 @@ export const Options = styled.ul`
     flex-direction: column;
 
     li {
+        display: grid;
         padding: 5px;
         line-height: 35px;
         border-radius: 10px;
         text-decoration: none;
         transition: .3s linear;
         background: transparent;
-
+        
         :nth-child(3) {
             padding: 0 0;
         }
-
+        
         &:hover {
             background: ${({ theme }) => theme.palette.opacity.dark[10] };
         }
-
+        
         &.selected {
             width: 100%;
             border-radius: 0;
@@ -57,8 +73,8 @@ export const Options = styled.ul`
             }
         }
     }
-
-    @media screen and (min-width: 768px) and (max-width: 1150px) {
+    
+    @media screen and (min-width: 769px) and (max-width: 1150px) {
         gap: 15px;
         align-items: center;
 
@@ -66,6 +82,20 @@ export const Options = styled.ul`
             padding: 10px;
             line-height: 40px;
             width: fit-content;
+
+            &.selected {
+                width: fit-content;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        
+        li {
+            padding: 10px;
 
             &.selected {
                 width: fit-content;
@@ -109,7 +139,7 @@ export const LinkTo = styled(Link)`
         }
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1150px) {
+    @media screen and (max-width: 1150px) {
         svg, g {
             font-size: 18pt;
             color: red;
@@ -123,6 +153,24 @@ export const LinkTo = styled(Link)`
             svg, g {
                 font-size: 18pt;
             }
+        }
+    }
+    
+    @media screen and (max-width: 768px) {
+        svg, g {
+            font-size: 20pt;
+        }
+
+        .selected & {
+            svg, g {
+                font-size: 20pt;
+            }
+        }
+
+        ::after {
+            left: 0;
+            bottom: 0;
+            margin: 0 auto;
         }
     }
 `;
@@ -154,9 +202,15 @@ export const ContactButton = styled.button`
                         : theme.palette.primary.main };
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1150px) {
+    @media screen and (max-width: 1150px) {
         p {
             display: none;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        svg, g {
+            font-size: 22pt;
         }
     }
 `;
@@ -184,7 +238,7 @@ export const UserAccount = styled.footer`
         color: ${({ theme }) => theme.palette.secondary.main };
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1150px) {
+    @media screen and (min-width: 769px) and (max-width: 1150px) {
         padding: 0;
         width: 3.5rem;
         height: 3.5rem;
@@ -217,7 +271,7 @@ export const ProfileWrapper = styled.figure`
         height: 100%;
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1150px) {
+    @media screen and (min-width: 769px) and (max-width: 1150px) {
         width: inherit;
         height: inherit;
         margin: 0px;
@@ -248,7 +302,7 @@ export const MoreInformations = styled.button`
         background: ${({ theme }) => theme.palette.opacity.main[80] };
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1150px) {
+    @media screen and (min-width: 769px) and (max-width: 1150px) {
         margin: 0px;
         grid-row: 1/2;
         width: inherit;
