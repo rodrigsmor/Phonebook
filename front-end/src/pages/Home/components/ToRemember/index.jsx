@@ -30,19 +30,21 @@ const ToRemember = () => {
     return (
         <ToRememberContainer>
             <h3>Para se lembrar</h3>
-            {
-                contacts.map((contact, id) => (
-                    <ContactMin key={id}>
-                        <figure>
-                            <img 
-                                src={contact.image}
-                                alt={`Imagem de perfil de ${contact.name}`} 
-                            />
-                        </figure>
-                        <span>{ contact.name }</span>
-                    </ContactMin>
-                ))
-            }
+            <div className={'cardWrapper'}>
+                {
+                    contacts.map((contact, id) => (
+                        <ContactMin key={id}>
+                            <figure>
+                                <img 
+                                    src={contact.image}
+                                    alt={`Imagem de perfil de ${contact.name}`} 
+                                />
+                            </figure>
+                            <span>{ contact.name }</span>
+                        </ContactMin>
+                    ))
+                }
+            </div>
         </ToRememberContainer>
     );
 }
