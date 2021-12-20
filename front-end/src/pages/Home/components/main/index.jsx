@@ -2,9 +2,9 @@ import {
     MainContainer,
 } from './styled'
 
-import ToRemember from '../ToRemember';
-import Statistics from '../Statistics'
 import Greetings from '../Greetings';
+import ToRemember from '../ToRemember';
+import Statistics from '../Statistics';
 import YourContacts from '../YourContacts';
 import RecentContacts from '../RecentContacts';
 

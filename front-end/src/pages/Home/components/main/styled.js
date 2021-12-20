@@ -16,6 +16,12 @@ export const MainContainer = styled(Main)`
     }
 
     @media screen and (max-width: 768px) {
-        gap: 20px;        
+        gap: 20px;
+        
+        section,
+        aside {
+            width: 100%;
+            height: fit-content;
+        }
     }
 `;

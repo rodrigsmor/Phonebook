@@ -9,27 +9,29 @@ import { useAuth } from '../../../providers/auth';
 
 const Switcher = () => {
     const { theme, setTheme } = useAuth();
-    const [ icon, setIcon ] = useState(BsCloudSun);
 
-    const changeTheme = () => {
-        let temp = theme === 'light' ? 'dark'
-                                     : 'light'
-        
-        setTheme(temp);
-    
-        temp = theme === 'light' ? BsCloudMoon
-                                 : BsCloudSun;
-    
-        setIcon(temp)
+    const showIcon = () => {
+        if(theme === 'light')
+            return <BsCloudSun />
+        else
+            return <BsCloudMoon />
     }
-
+    
+    const changeTheme = () => {
+        if(theme === 'light') {
+            setTheme('dark');
+        } else {
+            setTheme('light')
+        }
+    }
+    
     return (
         <SwitchWrapper>
             <button
                 onClick={changeTheme}
                 className={theme}
             >
-                    {icon}
+                    {showIcon()}
             </button>
         </SwitchWrapper>
     );

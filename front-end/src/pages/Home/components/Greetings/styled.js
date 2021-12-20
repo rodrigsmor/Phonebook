@@ -42,8 +42,6 @@ export const GreetingsBox = styled.section`
         img {
             width: 100%;
             height: auto;
-            position: absolute;
-            transform: scale(1.5);
         }
     }
 
@@ -65,11 +63,46 @@ export const GreetingsBox = styled.section`
         }
     }
 
+    @media screen and (min-width: 866px) {
+        div {
+            img {
+                position: absolute;
+                transform: scale(1.5);
+            }
+        }
+    }
+
     @media screen and (min-width: 769px) and (max-width: 865px) {
         grid-template-columns: 1fr;
 
         div {
             display: none;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 3em 2.3em !important;
+        grid-template-columns: 1fr 10rem;
+
+        article {
+            h3 {
+                font-size: 5vw;
+                font-weight: 800;
+                height: fit-content;
+                max-height: fit-content;
+            }
+        }
+
+        div {
+            width: 10rem;
+            height: 10rem;
+
+            img {
+                width: inherit;
+                height: inherit;
+                position:a absolute;
+                transform:scale(1.1);
+            }
         }
     }
 `;
