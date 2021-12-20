@@ -14,8 +14,8 @@ const Main = () => {
             <Greetings />
             <ToRemember />
             <RecentContacts />
-            <YourContacts />
             <Statistics />
+            <YourContacts />
         </MainContainer>
     );
 }
