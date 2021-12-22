@@ -16,24 +16,31 @@ export const YourContactsContainer = styled.section`
         grid-column: 1/6;
         align-items: center;
     }
+
+    @media screen and (max-width: 768px) {
+        display: grid;
+        margin: 0 0 10px 0;
+        box-shadow: none !important;
+        padding: 20px 0px !important;
+        background: transparent !important;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, max-content);
+
+        h3 {
+            grid-row: 1/2;
+            font-size: 17pt;
+            grid-column: 1/3;
+        }
+    }
 `;
 
 export const ContactContainer = styled.div`
-    width: 100%;
-    height: 4.5em;
     display: flex;
     align-items: center;
     border-radius: 15px;
     transition: .5s ease;
     padding: 0 20px;
     justify-content: space-between;
-    box-shadow: 0px 0px 10px -1px
-                ${({ theme }) => theme.palette.opacity.dark[30] };
-    background: ${({ theme }) => theme.palette.background.medium };
-
-    :hover {
-        width: 102%;
-    }
 
     picture {
         width: 3em;
@@ -86,6 +93,24 @@ export const ContactContainer = styled.div`
         }
     }
 
+    @media screen and (min-width: 769px) {
+        width: 100%;
+        height: 4.5em;
+        box-shadow: 0px 0px 10px -1px
+                    ${({ theme }) => theme.palette.opacity.dark[30] };
+        background: ${({ theme }) => theme.palette.background.medium };
+
+        :hover {
+            transform: scale(1.03);
+        }
+
+        h4 {
+            span {
+                display: none;
+            }
+        }
+    }
+
     @media screen and (min-width: 769px) and (max-width: 1040px) {
         h5 {
             display: none;
@@ -102,6 +127,65 @@ export const ContactContainer = styled.div`
         button {
             font-size: 13px;
             padding: 5px 10px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+        grid-gap: 10px;
+        padding: 20px 20px;
+        max-width: initial;
+        align-items: center;
+        flex-direction: column;
+        background: ${({ theme }) => theme.palette.primary.main };
+
+        picture {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 5px 0px;
+            color: ${({ theme }) => theme.palette.primary.main };
+            background: ${({ theme }) => theme.palette.background.main };
+        }
+
+        h4 {
+            width: 100%;
+            display: flex;
+            font-size: 15pt;
+            flex-wrap: wrap;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            color: ${({ theme }) => theme.palette.background.main };
+
+            span {
+                opacity: .8;
+                font-size: 9pt;
+                flex-basis: 100%;
+                line-height: 10px;
+                color: ${({ theme }) => theme.palette.secondary.dark };
+            }
+        }
+
+        h5 {
+            color: ${({ theme }) => theme.palette.background.contrast };
+        }
+
+        &:nth-of-type(2) {
+            background: ${({ theme }) => theme.palette.secondary.main };
+            
+            button {
+                color: ${({ theme }) => theme.palette.secondary.main };
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        h4 {
+            font-size: 12pt;
         }
     }
 `;

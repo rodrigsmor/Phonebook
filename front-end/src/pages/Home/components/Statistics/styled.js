@@ -12,6 +12,15 @@ export const StatisticsContainer = styled.aside`
         line-height: 1.17em;
         align-items: center;
     }
+
+    @media screen and (max-width: 768px) {
+        margin: 0;
+        gap: 20px;
+
+        h3 {
+            font-size: 17pt;
+        }
+    }
 `;
 
 export const StatisticsTable = styled.table`
@@ -33,6 +42,14 @@ export const StatisticsTable = styled.table`
         td {
             text-align: right;
             color: ${({ theme }) => theme.palette.primary.main };
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        border-spacing: 0 20px;
+
+        tr {
+            font-size: 11pt;
         }
     }
 `;

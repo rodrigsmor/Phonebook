@@ -16,7 +16,7 @@ export const BoxContainer = styled.section`
         align-items: center;
     }
 
-    @media screen and (max-width: 968px) {
+    @media screen and (max-width: 768px) {
         grid-gap: 20px;
 
         h3 {
@@ -189,7 +189,7 @@ export const ContactsMin = styled.figure`
         }
 
         h4 {
-            font-weight: 900;
+            font-weight: 700;
             font-weight: 18px;
             align-items: flex-end;
             line-height: 20px;
