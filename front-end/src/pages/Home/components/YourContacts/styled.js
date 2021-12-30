@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const YourContactsContainer = styled.section`
-    gap: 20px;
+    gap: 10px;
     display: flex;
     grid-row: 3/5;
     grid-column: 1/4;
@@ -18,13 +18,11 @@ export const YourContactsContainer = styled.section`
     }
 
     @media screen and (max-width: 768px) {
-        display: grid;
+        gap: 20px;
         margin: 0 0 10px 0;
         box-shadow: none !important;
         padding: 20px 0px !important;
         background: transparent !important;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, max-content);
 
         h3 {
             grid-row: 1/2;
@@ -34,12 +32,27 @@ export const YourContactsContainer = styled.section`
     }
 `;
 
+export const ContactsWrapper = styled.div`
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @media screen and (max-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, max-content);
+    }
+`;
+
 export const ContactContainer = styled.div`
     display: flex;
+    padding: 0 20px;
     align-items: center;
     border-radius: 15px;
     transition: .5s ease;
-    padding: 0 20px;
     justify-content: space-between;
 
     picture {

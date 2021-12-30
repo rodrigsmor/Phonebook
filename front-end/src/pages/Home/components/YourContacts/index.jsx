@@ -1,4 +1,5 @@
 import {
+    ContactsWrapper,
     ContactContainer,
     YourContactsContainer,
 } from './styled';
@@ -20,25 +21,27 @@ const YourContacts = () => {
     return (
         <YourContactsContainer>
             <h3>Seus Contatos</h3>
-            {
-                contacts.map((contact, id) => (
-                    <ContactContainer key={id}>
-                        <picture>
-                            <img 
-                                src={contact.image}
-                                alt={`imagem do contato ${contact.name}`}
-                            />
-                        </picture>
+            <ContactsWrapper>
+                {
+                    contacts.map((contact, id) => (
+                        <ContactContainer key={id}>
+                            <picture>
+                                <img 
+                                    src={contact.image}
+                                    alt={`imagem do contato ${contact.name}`}
+                                />
+                            </picture>
 
-                        <h4>
-                            {contact.name}
-                            <span>+55 (15) 98765-8271</span>
-                        </h4>
-                        <h5>{contact.group}</h5>
-                        <button>VISUALIZAR</button>
-                    </ContactContainer>
-                ))
-            }
+                            <h4>
+                                {contact.name}
+                                <span>+55 (15) 98765-8271</span>
+                            </h4>
+                            <h5>{contact.group}</h5>
+                            <button>VISUALIZAR</button>
+                        </ContactContainer>
+                    ))
+                }
+            </ContactsWrapper>
         </YourContactsContainer>
     );
 }

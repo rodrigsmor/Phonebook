@@ -88,4 +88,21 @@ export const SwitchWrapper = styled.div`
             }
         }
     }
+
+    @media screen and (max-width: 425px) {
+        button {
+            svg {
+                font-size: 18pt;
+            }
+        }
+    }
+
+    @media screen and (max-width: 295px) {
+        
+        button {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 10px;
+        }
+    }
 `;

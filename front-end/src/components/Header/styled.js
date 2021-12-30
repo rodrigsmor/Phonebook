@@ -43,10 +43,23 @@ export const HeaderContainer = styled.header`
             }
         }
     }
+
+    @media screen and (max-width: 380px) {
+        .components {
+            gap: .5rem;
+        }
+    }
+
+    @media screen and (max-width: 313px) {
+        .components {
+            gap: 0rem;
+        }
+    }
 `;
 
 export const PageTitle = styled.h1`
     font-weight: 800;
+    max-width: fit-content;
     color: ${({ theme }) => theme.palette.primary.dark };
     
     @media screen and (min-width: 769px) and (max-width: 830px) {
@@ -55,6 +68,10 @@ export const PageTitle = styled.h1`
 
     @media screen and (max-width: 768px) {
         color: ${({ theme }) => theme.palette.background.contrast };
+    }
+
+    @media screen and (max-width: 425px) {
+        font-size: clamp(18px, 5vw, 20pt);
     }
 `;
 
@@ -81,6 +98,16 @@ export const NotificationButton = styled.button`
                 color: ${({ theme }) => theme.palette.background.contrast };
             }
         }
+    }
+
+    @media screen and (max-width: 425px) {
+        font-size: 18pt;
+    }
+
+    @media screen and (max-width: 295px) {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 10px;
     }
 `;
 
