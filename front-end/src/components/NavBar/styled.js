@@ -102,6 +102,10 @@ export const Options = styled.ul`
             }
         }
     }
+
+    @media screen and (max-width: 330px) {
+        gap: 0;
+    }
 `;
 
 export const LinkTo = styled(Link)`
@@ -173,6 +177,18 @@ export const LinkTo = styled(Link)`
             margin: 0 auto;
         }
     }
+
+    @media screen and (max-width: 280px) {
+        svg, g {
+            font-size: clamp(13pt, 8vw, 20pt);
+        }
+        
+        .selected & {
+            svg, g {
+                font-size: clamp(14pt, 9vw, 20pt);
+            }
+        }
+    }
 `;
 
 export const ContactButton = styled.button`
@@ -212,6 +228,10 @@ export const ContactButton = styled.button`
         svg, g {
             font-size: 22pt;
         }
+    }
+
+    @media screen and (max-width: 280px) {
+        padding: 15px;
     }
 `;
 

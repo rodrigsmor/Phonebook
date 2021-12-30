@@ -19,6 +19,8 @@ export const YourContactsContainer = styled.section`
 
     @media screen and (max-width: 768px) {
         gap: 20px;
+        max-width: 100%;
+        overflow: hidden;
         margin: 0 0 10px 0;
         box-shadow: none !important;
         padding: 20px 0px !important;
@@ -41,9 +43,8 @@ export const ContactsWrapper = styled.div`
     justify-content: space-evenly;
 
     @media screen and (max-width: 768px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, max-content);
+        grid-row: 2/3;
+        grid-column: 1/3;
     }
 `;
 
@@ -161,29 +162,37 @@ export const ContactContainer = styled.div`
             width: 100%;
             padding: 5px 0px;
             color: ${({ theme }) => theme.palette.primary.main };
-            background: ${({ theme }) => theme.palette.background.main };
+            background: ${({ theme }) => theme.title === 'light' 
+                        ? theme.palette.background.main
+                        : theme.palette.background.contrast 
+            };
         }
 
         h4 {
             width: 100%;
             display: flex;
-            font-size: 15pt;
             flex-wrap: wrap;
-            text-align: center;
+            max-width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
             align-items: center;
             justify-content: center;
+            font-size: clamp(15px, 5vw, 25pt);
             color: ${({ theme }) => theme.palette.background.main };
 
             span {
-                opacity: .8;
                 font-size: 9pt;
                 flex-basis: 100%;
                 line-height: 10px;
-                color: ${({ theme }) => theme.palette.secondary.dark };
+                color: ${({ theme }) => theme.title === 'light'
+                        ? theme.palette.secondary.dark
+                        : theme.palette.secondary.light
+                };
             }
         }
 
         h5 {
+            width: fit-content;
             color: ${({ theme }) => theme.palette.background.contrast };
         }
 
@@ -193,12 +202,6 @@ export const ContactContainer = styled.div`
             button {
                 color: ${({ theme }) => theme.palette.secondary.main };
             }
-        }
-    }
-
-    @media screen and (max-width: 600px) {
-        h4 {
-            font-size: 12pt;
         }
     }
 `;

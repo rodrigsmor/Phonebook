@@ -7,7 +7,7 @@ const dark = {
             dark: '#b469ff'
         },
         secondary: {
-            light: '#333',
+            light: '#471059',
             main: '#B001FE',
             dark: '#c95cfa'
         },
