@@ -23,6 +23,7 @@ export const GreetingsBox = styled.section`
             max-height: 25pt;
             overflow: hidden;
             white-space: nowrap;
+            text-overflow: ellipsis;
         }
         
         p {
@@ -80,7 +81,7 @@ export const GreetingsBox = styled.section`
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 461px) and (max-width: 768px) {
         padding: 3em 2.3em !important;
         grid-template-columns: 1fr 10rem;
 
@@ -103,6 +104,40 @@ export const GreetingsBox = styled.section`
                 position:a absolute;
                 transform:scale(1.1);
             }
+        }
+    }
+
+    @media screen and (max-width: 460px) {
+        grid-template-columns: 100%;
+        padding: 30px 20px 15px !important;
+        grid-template-rows: repeat(2, fit-content);
+
+        article {
+            grid-row: 2/3;
+            grid-column: 1/2;
+            align-items: center;
+
+            h3 {
+                height: max-content;
+                white-space: wrap;
+                text-align: center;
+                max-height: max-content;
+                font-size: clamp(20px, 8vw, 25pt);
+            }
+
+            p {
+                font-size: clamp(12px, 5vw, 11pt);
+                text-align: center;
+            }
+        }
+
+        div {
+            grid-row: 1/2;
+            grid-column: 1/2;
+        }
+
+        button {
+            width: 100%;
         }
     }
 `;

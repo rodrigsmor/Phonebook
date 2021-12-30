@@ -21,6 +21,8 @@ export const BoxContainer = styled.section`
 
         h3 {
             font-size: 17pt;
+            line-height: 16pt;
+            height: fit-content;
         }
     }
 `;
@@ -69,7 +71,7 @@ export const ContactsWrapper = styled.div`
         }
     }
 
-    @media screen and (max-width: 769px) {
+    @media screen and (max-width: 768px) {
         grid-gap: 20px 10px;
         display: grid;
         overflow-x: auto;
@@ -78,7 +80,7 @@ export const ContactsWrapper = styled.div`
         position: relative;
         height: fit-content;
         grid-auto-flow: row;
-        grid-template-columns: repeat(2, 70%);
+        grid-template-columns: repeat(2, 78%);
         grid-template-rows: repeat(4, fit-content);
 
         .contactWrapper {
@@ -123,6 +125,14 @@ export const ContactsWrapper = styled.div`
                         }
             ;
         }
+    }
+
+    @media screen and (max-width: 380px) {
+        grid-template-columns: repeat(2, 90%);
+    }
+
+    @media screen and (max-width: 291px) {
+        grid-template-columns: repeat(2, 95%);
     }
 `;
 

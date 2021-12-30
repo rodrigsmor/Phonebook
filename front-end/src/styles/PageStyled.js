@@ -42,6 +42,10 @@ export const Main = styled.main`
         flex-direction: column;
         padding: 0 2em 4.5rem 2em;
     }
+
+    @media screen and (max-width: 348px) {
+        padding: 0 6% 4.5rem 6%;
+    }
 `;
 
 export const Header = styled.header`
